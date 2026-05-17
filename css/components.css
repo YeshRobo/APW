@@ -211,6 +211,10 @@
   background: var(--surface-soft);
 }
 
+.project-card {
+  cursor: pointer;
+}
+
 .card-index {
   display: block;
   margin-bottom: 28px;
@@ -252,6 +256,107 @@
 
 .project-section p {
   margin-bottom: 0;
+}
+
+.project-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  width: 100%;
+  margin-top: 22px;
+  border: 1px solid rgba(98, 230, 209, 0.38);
+  border-radius: 8px;
+  background: rgba(98, 230, 209, 0.1);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 850;
+}
+
+.project-toggle:hover,
+.project-toggle:focus-visible {
+  border-color: var(--accent);
+  background: rgba(98, 230, 209, 0.17);
+}
+
+.agent-loop-panel {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  cursor: default;
+}
+
+.agent-loop-intro {
+  margin-bottom: 14px;
+  color: var(--muted-strong);
+}
+
+.agent-loop-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.agent-loop-tab {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(244, 241, 232, 0.05);
+  color: var(--muted-strong);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.agent-loop-tab:hover,
+.agent-loop-tab:focus-visible,
+.agent-loop-tab.is-active {
+  border-color: var(--accent);
+  background: rgba(98, 230, 209, 0.14);
+  color: var(--text);
+}
+
+.agent-loop-content {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(9, 10, 10, 0.26);
+  padding: 16px;
+}
+
+.agent-loop-content h4 {
+  margin-bottom: 8px;
+  color: var(--accent-warm);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.agent-loop-summary {
+  margin-bottom: 14px;
+  color: var(--muted-strong);
+  font-weight: 700;
+}
+
+.worked-on-label {
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.worked-on-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.worked-on-list li + li {
+  margin-top: 8px;
 }
 
 .tech-list {
@@ -412,6 +517,10 @@
 
   .hero h1 {
     font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .agent-loop-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-actions,

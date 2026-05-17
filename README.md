@@ -33,6 +33,24 @@ Each object in `data/projects.js` includes:
   builtSystem: "...",
   technologies: ["..."],
   agentInterpretation: "...",
+  agentLoop: {
+    perceive: {
+      summary: "...",
+      workedOn: ["..."]
+    },
+    think: {
+      summary: "...",
+      workedOn: ["..."]
+    },
+    act: {
+      summary: "...",
+      workedOn: ["..."]
+    },
+    transform: {
+      summary: "...",
+      workedOn: ["..."]
+    }
+  },
   links: {
     code: "#",
     details: "#",
@@ -40,6 +58,13 @@ Each object in `data/projects.js` includes:
   }
 }
 ```
+
+The `agentLoop` field powers the expandable project interaction. Each project opens into four layers:
+
+- `perceive` - signals, sensors, data, or inputs the system reads.
+- `think` - control logic, reasoning, models, policies, or planning.
+- `act` - motors, code, tools, outputs, or decisions the system produces.
+- `transform` - what changes because the agent closes the loop.
 
 ## Local Preview
 
