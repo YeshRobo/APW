@@ -1,4 +1,9 @@
-import { siteContent } from "../data/siteContent.js";
+let siteContent = null;
+
+async function loadSiteContent(version = Date.now()) {
+  const module = await import(`../data/siteContent.js?v=${version}`);
+  siteContent = module.siteContent;
+}
 
 function getContentValue(path) {
   return path.split(".").reduce((value, key) => value?.[key], siteContent);
@@ -207,7 +212,8 @@ function renderSpectrumList() {
   );
 }
 
-export function renderSiteContent() {
+export async function renderSiteContent(version) {
+  await loadSiteContent(version);
   renderMeta();
   renderTextBindings();
   renderBrand();

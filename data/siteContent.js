@@ -1,12 +1,12 @@
 // EDIT THIS FILE for website text, links, section headings, skills, and non-project cards.
-// EDIT data/projects.js for project cards and Perceive/Think/Act/Transform details.
+// EDIT data/projects.js for project cards and Agent Core / matter-state transformation details.
 
 export const siteContent = {
   // Browser tab title and search/share description.
   meta: {
     title: "Yeshwanth Reddy Gurredy | Agent Systems Portfolio",
     description:
-      "Yeshwanth Reddy Gurredy's technical portfolio about robotics, embedded controls, human-machine systems, and agents that perceive, think, act, and transform.",
+      "Yeshwanth Reddy Gurredy's technical portfolio about robotics, embedded controls, human-machine systems, and agents that transform the state of matter.",
   },
 
   // Header brand shown at the top left.
@@ -31,9 +31,9 @@ export const siteContent = {
   hero: {
     kicker: "Yeshwanth Reddy Gurredy / Robotics & Embedded Controls",
     title: "Agents at Every Level of Intelligence",
-    subtitle: "Perceive. Think. Act. Transform.",
+    subtitle: "Perceive. Process. Act. Transform.",
     intro:
-      "I study and build agents: systems that perceive information, process it through structure or intelligence, and act to transform matter, motion, or knowledge. My work connects UAV gimbals, embedded motor control, exoskeleton research, and information systems.",
+      "An agent perceives the current state of matter, processes it inside an Agent Core, and acts to create a new state of matter.",
     highlights: [
       "UAV gimbal controls",
       "Human-exoskeleton research",
@@ -50,46 +50,49 @@ export const siteContent = {
     kicker: "Core Philosophy",
     title: "Agents are systems, not just chatbots.",
     paragraphs: [
-      "An agent is any system that can perceive, think, and act. AI chatbots are one example, but the concept is broader and more useful when applied to engineering systems.",
-      "Humans, robots, control systems, software systems, organizations, and civilizations can all be viewed as agents. The difference is the depth of perception, complexity of thinking, and range of action.",
+      "Agents are not only AI systems. Humans, robots, control systems, software systems, organizations, and civilizations can all be viewed as agents.",
+      "An agent perceives the current state of matter, processes that perception inside an Agent Core, and acts to create a new state of matter.",
+      "The difference between agents is the depth of perception, complexity of the Agent Core, and range of action.",
+      "Agents transform matter by changing its state or arrangement. Documents, machines, bodies, vehicles, tools, and cities are all matter in different states and arrangements.",
+      "The Agent Core can take different forms: a human mind, a control algorithm, a learned policy, a retrieval and reasoning system, or an organization's people, rules, plans, communication, and decision structure.",
     ],
     equation: {
       label: "Core equation",
-      parts: ["Information", "+", "Energy", "+", "Organized Agents", "\\u2192"],
-      result: "Matter Transformation",
+      parts: ["Matter State", "+", "Perception", "+", "Agent Core", "+", "Action", "\\u2192"],
+      result: "New Matter State",
     },
   },
 
   // AGENT FRAMEWORK SECTION.
   framework: {
     kicker: "Agent Framework",
-    title: "A practical model for engineered agency.",
+    title: "Current State of Matter to New State of Matter.",
     intro:
-      "Every agent can be understood through four linked capabilities. The same pattern appears in mechanical systems, software systems, human workflows, and large organizations.",
+      "The Agent Core is the internal space where perception becomes representation, representation becomes thinking, and thinking becomes action.",
     cards: [
       {
         index: "01",
-        title: "Perceive",
+        title: "Matter State",
         description:
-          "Sensors, documents, human senses, and data streams convert the outside world into usable signals.",
+          "The current physical or symbolic arrangement the agent must understand or change.",
       },
       {
         index: "02",
-        title: "Think",
+        title: "Perception",
         description:
-          "Control logic, models, reasoning, planning, and learning turn signals into structured decisions.",
+          "The process of sensing, reading, measuring, or receiving signals from the current state.",
       },
       {
         index: "03",
-        title: "Act",
+        title: "Agent Core",
         description:
-          "Motors, code, tools, machines, and decisions apply force or instruction back into the world.",
+          "The internal system where perception becomes representation, representation becomes thinking, and thinking becomes action.",
       },
       {
         index: "04",
-        title: "Transform",
+        title: "Action",
         description:
-          "Matter, movement, information, and systems change when action is coordinated with intent.",
+          "The output that changes the state of matter through force, control, code, organization, or structured behavior.",
       },
     ],
   },
@@ -99,7 +102,7 @@ export const siteContent = {
     kicker: "Engineering Projects",
     title: "Projects as Agents",
     intro:
-      "Each project explores a different level of agency: control, human-machine interaction, information organization, and adaptive decision-making.",
+      "Each project shows how an agent perceives a matter state, processes it through an Agent Core, and acts to create a new matter state.",
     noscript:
       "Project cards require JavaScript. Use a local server or GitHub Pages to preview the modular site.",
   },
@@ -109,7 +112,7 @@ export const siteContent = {
     kicker: "Experience Evidence",
     title: "Systems work behind the framework.",
     intro:
-      "The agent idea is grounded in hardware bring-up, embedded firmware, experimental robotics, and deployed information systems.",
+      "The framework is grounded in hardware bring-up, embedded firmware, experimental robotics, and deployed information systems.",
     cards: [
       {
         value: "2-axis",
@@ -151,7 +154,7 @@ export const siteContent = {
   // SPECTRUM SECTION.
   spectrum: {
     kicker: "Spectrum of Agents",
-    title: "Agency scales with perception, thought, and action.",
+    title: "Agency scales with perception, Agent Core complexity, and action range.",
     items: [
       "Thermostat",
       "UAV Gimbal",
@@ -169,7 +172,7 @@ export const siteContent = {
     title: "Robotics, embedded control, AI systems, and information organization.",
     paragraphs: [
       "I am a robotics and embedded controls engineer pursuing an M.S. in Robotics and Autonomous Systems at Arizona State University. My work focuses on UAV gimbals, embedded motor control, human-exoskeleton interaction, safe control, and information organization.",
-      "I am interested in how agents can be designed, connected, and organized to solve real-world problems across hardware, software, and human-machine systems.",
+      "I am interested in how agents can be designed, connected, and organized to transform matter states across hardware, software, and human-machine systems.",
     ],
   },
 

@@ -1,5 +1,12 @@
-import { renderSiteContent } from "./renderSiteContent.js";
-import { renderProjects } from "./renderProjects.js";
+async function renderEditableContent() {
+  const version = Date.now();
+  const [{ renderSiteContent }, { renderProjects }] = await Promise.all([
+    import(`./renderSiteContent.js?v=${version}`),
+    import(`./renderProjects.js?v=${version}`),
+  ]);
+
+  await Promise.all([renderSiteContent(version), renderProjects(version)]);
+}
 
 function updateCurrentYear() {
   const currentYear = document.querySelector("#current-year");
@@ -191,9 +198,8 @@ function setupHeroCanvas() {
   window.addEventListener("resize", initializeCanvas);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderSiteContent();
-  renderProjects();
+document.addEventListener("DOMContentLoaded", async () => {
+  await renderEditableContent();
   updateCurrentYear();
   setupHeaderState();
   setupMobileNavigation();
