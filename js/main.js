@@ -1,3 +1,4 @@
+import { renderSiteContent } from "./renderSiteContent.js";
 import { renderProjects } from "./renderProjects.js";
 
 function updateCurrentYear() {
@@ -191,6 +192,7 @@ function setupHeroCanvas() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  renderSiteContent();
   renderProjects();
   updateCurrentYear();
   setupHeaderState();

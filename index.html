@@ -15,9 +15,9 @@
   <!-- The header stays compact so the first screen feels like a portfolio, not a landing-page pitch. -->
   <header class="site-header" id="site-header">
     <nav class="nav-shell" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Yeshwanth Reddy Gurredy portfolio home">
-        <span class="brand-mark" aria-hidden="true">YR</span>
-        <span>Yeshwanth Reddy</span>
+      <a class="brand" href="#top" aria-label="Yeshwanth Reddy Gurredy portfolio home" data-brand-link>
+        <span class="brand-mark" aria-hidden="true" data-content="brand.initials">YR</span>
+        <span data-content="brand.shortName">Yeshwanth Reddy</span>
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
@@ -26,7 +26,7 @@
         <span class="sr-only">Open navigation</span>
       </button>
 
-      <ul class="nav-links" id="primary-menu">
+      <ul class="nav-links" id="primary-menu" data-navigation>
         <li><a href="#philosophy">Philosophy</a></li>
         <li><a href="#framework">Framework</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -45,18 +45,18 @@
       <div class="hero-shade" aria-hidden="true"></div>
 
       <div class="hero-content section-shell">
-        <p class="section-kicker">Yeshwanth Reddy Gurredy / Robotics & Embedded Controls</p>
-        <h1 id="hero-title">Agents at Every Level of Intelligence</h1>
-        <p class="hero-subtitle">Perceive. Think. Act. Transform.</p>
-        <p class="hero-intro">
+        <p class="section-kicker" data-content="hero.kicker">Yeshwanth Reddy Gurredy / Robotics & Embedded Controls</p>
+        <h1 id="hero-title" data-content="hero.title">Agents at Every Level of Intelligence</h1>
+        <p class="hero-subtitle" data-content="hero.subtitle">Perceive. Think. Act. Transform.</p>
+        <p class="hero-intro" data-content="hero.intro">
           I study and build agents: systems that perceive information, process it through structure or intelligence, and act to transform matter, motion, or knowledge. My work connects UAV gimbals, embedded motor control, exoskeleton research, and information systems.
         </p>
-        <div class="hero-proof" aria-label="Portfolio highlights">
+        <div class="hero-proof" aria-label="Portfolio highlights" data-hero-highlights>
           <span>UAV gimbal controls</span>
           <span>Human-exoskeleton research</span>
           <span>Embedded C / Python / SQL</span>
         </div>
-        <div class="hero-actions" aria-label="Featured page links">
+        <div class="hero-actions" aria-label="Featured page links" data-hero-actions>
           <a class="button primary" href="#projects">View Projects</a>
           <a class="button secondary" href="#experience">View Experience</a>
         </div>
@@ -66,10 +66,10 @@
     <section class="section philosophy-section" id="philosophy" aria-labelledby="philosophy-title">
       <div class="section-shell two-column">
         <div>
-          <p class="section-kicker">Core Philosophy</p>
-          <h2 id="philosophy-title">Agents are systems, not just chatbots.</h2>
+          <p class="section-kicker" data-content="philosophy.kicker">Core Philosophy</p>
+          <h2 id="philosophy-title" data-content="philosophy.title">Agents are systems, not just chatbots.</h2>
         </div>
-        <div class="section-copy">
+        <div class="section-copy" data-philosophy-copy>
           <p>
             An agent is any system that can perceive, think, and act. AI chatbots are one example, but the concept is broader and more useful when applied to engineering systems.
           </p>
@@ -92,14 +92,14 @@
     <section class="section" id="framework" aria-labelledby="framework-title">
       <div class="section-shell">
         <div class="section-heading">
-          <p class="section-kicker">Agent Framework</p>
-          <h2 id="framework-title">A practical model for engineered agency.</h2>
-          <p>
+          <p class="section-kicker" data-content="framework.kicker">Agent Framework</p>
+          <h2 id="framework-title" data-content="framework.title">A practical model for engineered agency.</h2>
+          <p data-content="framework.intro">
             Every agent can be understood through four linked capabilities. The same pattern appears in mechanical systems, software systems, human workflows, and large organizations.
           </p>
         </div>
 
-        <div class="card-grid framework-grid">
+        <div class="card-grid framework-grid" data-framework-cards>
           <article class="info-card">
             <span class="card-index">01</span>
             <h3>Perceive</h3>
@@ -127,9 +127,9 @@
     <section class="section projects-section" id="projects" aria-labelledby="projects-title">
       <div class="section-shell">
         <div class="section-heading">
-          <p class="section-kicker">Engineering Projects</p>
-          <h2 id="projects-title">Projects as Agents</h2>
-          <p>
+          <p class="section-kicker" data-content="projectsSection.kicker">Engineering Projects</p>
+          <h2 id="projects-title" data-content="projectsSection.title">Projects as Agents</h2>
+          <p data-content="projectsSection.intro">
             Each project explores a different level of agency: control, human-machine interaction, information organization, and adaptive decision-making.
           </p>
         </div>
@@ -137,7 +137,7 @@
         <!-- Project cards are rendered from data/projects.js so new projects do not require HTML edits. -->
         <div class="card-grid project-grid" data-projects></div>
         <noscript>
-          <p class="noscript-note">Project cards require JavaScript. Use a local server or GitHub Pages to preview the modular site.</p>
+          <p class="noscript-note" data-content="projectsSection.noscript">Project cards require JavaScript. Use a local server or GitHub Pages to preview the modular site.</p>
         </noscript>
       </div>
     </section>
@@ -145,14 +145,14 @@
     <section class="section experience-section" id="experience" aria-labelledby="experience-title">
       <div class="section-shell">
         <div class="section-heading">
-          <p class="section-kicker">Experience Evidence</p>
-          <h2 id="experience-title">Systems work behind the framework.</h2>
-          <p>
+          <p class="section-kicker" data-content="experience.kicker">Experience Evidence</p>
+          <h2 id="experience-title" data-content="experience.title">Systems work behind the framework.</h2>
+          <p data-content="experience.intro">
             The agent idea is grounded in hardware bring-up, embedded firmware, experimental robotics, and deployed information systems.
           </p>
         </div>
 
-        <div class="card-grid evidence-grid">
+        <div class="card-grid evidence-grid" data-experience-cards>
           <article class="evidence-card">
             <span class="evidence-value">2-axis</span>
             <h3>Stabilized UAV EO gimbal</h3>
@@ -175,7 +175,7 @@
           </article>
         </div>
 
-        <div class="skill-strip" aria-label="Core technical skills">
+        <div class="skill-strip" aria-label="Core technical skills" data-skill-list>
           <span>Embedded C</span>
           <span>Python</span>
           <span>SQL</span>
@@ -191,11 +191,11 @@
     <section class="section spectrum-section" id="spectrum" aria-labelledby="spectrum-title">
       <div class="section-shell">
         <div class="section-heading compact">
-          <p class="section-kicker">Spectrum of Agents</p>
-          <h2 id="spectrum-title">Agency scales with perception, thought, and action.</h2>
+          <p class="section-kicker" data-content="spectrum.kicker">Spectrum of Agents</p>
+          <h2 id="spectrum-title" data-content="spectrum.title">Agency scales with perception, thought, and action.</h2>
         </div>
 
-        <ol class="agent-scale" aria-label="Agent intelligence scale">
+        <ol class="agent-scale" aria-label="Agent intelligence scale" data-spectrum-list>
           <li>Thermostat</li>
           <li>UAV Gimbal</li>
           <li>Robot</li>
@@ -210,10 +210,10 @@
     <section class="section about-section" id="about" aria-labelledby="about-title">
       <div class="section-shell two-column">
         <div>
-          <p class="section-kicker">About</p>
-          <h2 id="about-title">Robotics, embedded control, AI systems, and information organization.</h2>
+          <p class="section-kicker" data-content="about.kicker">About</p>
+          <h2 id="about-title" data-content="about.title">Robotics, embedded control, AI systems, and information organization.</h2>
         </div>
-        <div class="section-copy">
+        <div class="section-copy" data-about-copy>
           <p>
             I am a robotics and embedded controls engineer pursuing an M.S. in Robotics and Autonomous Systems at Arizona State University. My work focuses on UAV gimbals, embedded motor control, human-exoskeleton interaction, safe control, and information organization.
           </p>
@@ -227,12 +227,12 @@
     <section class="section contact-section" id="contact" aria-labelledby="contact-title">
       <div class="section-shell contact-shell">
         <div>
-          <p class="section-kicker">Contact</p>
-          <h2 id="contact-title">Connect and review my work.</h2>
-          <p>GitHub and email are ready. Add your LinkedIn URL and resume PDF when you want those links to go live.</p>
+          <p class="section-kicker" data-content="contact.kicker">Contact</p>
+          <h2 id="contact-title" data-content="contact.title">Connect and review my work.</h2>
+          <p data-content="contact.intro">GitHub and email are ready. Add your LinkedIn URL and resume PDF when you want those links to go live.</p>
         </div>
 
-        <div class="contact-links" aria-label="Contact links">
+        <div class="contact-links" aria-label="Contact links" data-contact-links>
           <!-- Update the LinkedIn URL and add assets/resume.pdf before publishing those links broadly. -->
           <a href="https://github.com/YeshRobo" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -245,8 +245,8 @@
 
   <footer class="site-footer">
     <div class="section-shell footer-shell">
-      <span>&copy; <span id="current-year"></span> Yeshwanth Reddy Gurredy</span>
-      <a href="#top">Back to top</a>
+      <span>&copy; <span id="current-year"></span> <span data-content="footer.owner">Yeshwanth Reddy Gurredy</span></span>
+      <a href="#top" data-content="footer.backToTopLabel">Back to top</a>
     </div>
   </footer>
 

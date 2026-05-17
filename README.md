@@ -10,6 +10,34 @@ The site presents that idea as a professional engineering framework and connects
 
 Projects are data-driven. To add, remove, or edit projects, update `data/projects.js` instead of rewriting the HTML.
 
+Most non-project website text is also data-driven. To edit section headings, hero text, contact links, skills, framework cards, experience cards, and the agent spectrum, update `data/siteContent.js`.
+
+## Editing Map
+
+Use this map when you want to change the website:
+
+| What you want to change | Edit this file | Look for this section |
+| --- | --- | --- |
+| Browser title or description | `data/siteContent.js` | `meta` |
+| Header name or initials | `data/siteContent.js` | `brand` |
+| Navigation links | `data/siteContent.js` | `navigation` |
+| Hero title, subtitle, intro, buttons | `data/siteContent.js` | `hero` |
+| Core philosophy text and equation | `data/siteContent.js` | `philosophy` |
+| Perceive / Think / Act / Transform framework cards | `data/siteContent.js` | `framework` |
+| Projects section heading | `data/siteContent.js` | `projectsSection` |
+| Project cards and agent-loop details | `data/projects.js` | project objects |
+| Experience evidence cards | `data/siteContent.js` | `experience.cards` |
+| Skills strip | `data/siteContent.js` | `experience.skills` |
+| Agent spectrum scale | `data/siteContent.js` | `spectrum` |
+| About section | `data/siteContent.js` | `about` |
+| Contact links | `data/siteContent.js` | `contact.links` |
+| Footer owner/back-to-top text | `data/siteContent.js` | `footer` |
+| Colors | `css/base.css` | `:root` variables |
+| Page layout and grids | `css/layout.css` | section/grid classes |
+| Card/button/tab styling | `css/components.css` | component classes |
+
+The HTML in `index.html` is now mostly the page skeleton. The visible content is filled by `js/renderSiteContent.js` and `js/renderProjects.js` from the files in `data/`.
+
 Each project follows this structure:
 
 ```text
@@ -100,8 +128,10 @@ GitHub Pages will publish the site using `index.html` as the entry file.
 ## Files Included
 
 - `index.html` - Main website structure, static sections, and the project container rendered by JavaScript.
+- `data/siteContent.js` - Editable website content for hero, philosophy, framework, experience, spectrum, about, contact, and footer sections.
 - `data/projects.js` - Editable project data for the modular project card system.
 - `js/main.js` - App entry point for navigation, canvas, current year, and project rendering.
+- `js/renderSiteContent.js` - Fills the HTML sections using `data/siteContent.js`.
 - `js/renderProjects.js` - Builds project cards from `data/projects.js`.
 - `css/base.css` - Variables, reset styles, typography defaults, and accessibility helpers.
 - `css/layout.css` - Page layout, responsive grids, sections, header, and footer.
@@ -111,7 +141,7 @@ GitHub Pages will publish the site using `index.html` as the entry file.
 
 ## Customization Notes
 
-- Update the LinkedIn link in `index.html` before publishing widely.
+- Update the LinkedIn link in `data/siteContent.js` before publishing widely.
 - Add `assets/resume.pdf` if you want the resume link to work.
 - Edit project entries in `data/projects.js` as your UAV gimbal, exoskeleton, library agent, and RL navigation work evolves.
 - Adjust colors in `css/base.css`, layout rules in `css/layout.css`, and card/button styles in `css/components.css`.
