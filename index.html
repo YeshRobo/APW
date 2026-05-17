@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A technical portfolio about agents as systems that perceive, think, act, and transform matter, motion, and knowledge.">
-  <title>Agents at Every Level of Intelligence</title>
+  <meta name="description" content="Yeshwanth Reddy Gurredy's technical portfolio about robotics, embedded controls, human-machine systems, and agents that perceive, think, act, and transform.">
+  <title>Yeshwanth Reddy Gurredy | Agent Systems Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,9 +13,9 @@
   <!-- The header stays compact so the first screen feels like a portfolio, not a landing-page pitch. -->
   <header class="site-header" id="site-header">
     <nav class="nav-shell" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Agent systems portfolio home">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <span>Agent Systems</span>
+      <a class="brand" href="#top" aria-label="Yeshwanth Reddy Gurredy portfolio home">
+        <span class="brand-mark" aria-hidden="true">YR</span>
+        <span>Yeshwanth Reddy</span>
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
@@ -28,6 +28,7 @@
         <li><a href="#philosophy">Philosophy</a></li>
         <li><a href="#framework">Framework</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#spectrum">Spectrum</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -42,15 +43,20 @@
       <div class="hero-shade" aria-hidden="true"></div>
 
       <div class="hero-content section-shell">
-        <p class="section-kicker">Technical Portfolio / Agent Framework</p>
+        <p class="section-kicker">Yeshwanth Reddy Gurredy / Robotics & Embedded Controls</p>
         <h1 id="hero-title">Agents at Every Level of Intelligence</h1>
         <p class="hero-subtitle">Perceive. Think. Act. Transform.</p>
         <p class="hero-intro">
-          I study and build agents: systems that perceive information, process it through structure or intelligence, and act to transform matter, motion, or knowledge.
+          I study and build agents: systems that perceive information, process it through structure or intelligence, and act to transform matter, motion, or knowledge. My work connects UAV gimbals, embedded motor control, exoskeleton research, and information systems.
         </p>
+        <div class="hero-proof" aria-label="Portfolio highlights">
+          <span>UAV gimbal controls</span>
+          <span>Human-exoskeleton research</span>
+          <span>Embedded C / Python / SQL</span>
+        </div>
         <div class="hero-actions" aria-label="Featured page links">
           <a class="button primary" href="#projects">View Projects</a>
-          <a class="button secondary" href="#framework">Explore Framework</a>
+          <a class="button secondary" href="#experience">View Experience</a>
         </div>
       </div>
     </section>
@@ -133,6 +139,11 @@
             <p>
               A UAV gimbal can be viewed as a limited mechanical agent. It perceives motion through sensors, thinks through control logic, and acts through motors to stabilize camera orientation.
             </p>
+            <ul class="project-details">
+              <li>Owned system architecture for sensing, actuation, compute, power, and communication paths.</li>
+              <li>Implemented embedded C firmware, SVPWM, FOC, and cascaded stabilization loops on TI C2000 hardware.</li>
+              <li>Worked through bring-up issues across wiring, IMU orientation, encoder direction, electrical noise, and loop stability.</li>
+            </ul>
           </article>
           <article class="project-card">
             <div class="project-meta">Human-Machine Agent</div>
@@ -140,6 +151,11 @@
             <p>
               An exoskeleton is a shared agent system. Human intention provides direction, while the machine senses, supports, and acts to augment movement.
             </p>
+            <ul class="project-details">
+              <li>Researching effort-aware adaptive control for separating motion-driven effort from load-support effort.</li>
+              <li>Collected shoulder exoskeleton data from 10 subjects with joint, EMG, and 6-axis force/torque signals at 200 Hz.</li>
+              <li>Exploring CLF/CBF/QP-style safety constraints for assistance policies.</li>
+            </ul>
           </article>
           <article class="project-card">
             <div class="project-meta">Information Agent</div>
@@ -147,7 +163,58 @@
             <p>
               My library agent converts scattered documents into useful information. It perceives text, organizes knowledge, retrieves relevant content, and acts by producing structured understanding.
             </p>
+            <ul class="project-details">
+              <li>Frames document processing as an agent loop: ingest, structure, retrieve, reason, and respond.</li>
+              <li>Extends the same information-system thinking used in ThingWorx services, SQL-backed dashboards, and reusable data models.</li>
+              <li>Targets practical knowledge retrieval instead of vague automation.</li>
+            </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Experience Evidence</p>
+          <h2 id="experience-title">Systems work behind the framework.</h2>
+          <p>
+            The agent idea is grounded in hardware bring-up, embedded firmware, experimental robotics, and deployed information systems.
+          </p>
+        </div>
+
+        <div class="card-grid evidence-grid">
+          <article class="evidence-card">
+            <span class="evidence-value">2-axis</span>
+            <h3>Stabilized UAV EO gimbal</h3>
+            <p>Designed architecture, integration flow, motor control, safety behavior, and tuning workflow for a compact stabilized payload.</p>
+          </article>
+          <article class="evidence-card">
+            <span class="evidence-value">10 subjects</span>
+            <h3>Shoulder exoskeleton study</h3>
+            <p>Ran human-subject sessions and logged synchronized kinematics, EMG, and interaction torque for model-vs-baseline analysis.</p>
+          </article>
+          <article class="evidence-card">
+            <span class="evidence-value">~70 assets</span>
+            <h3>ThingWorx monitoring system</h3>
+            <p>Migrated a legacy retail monitoring application into reusable ThingWorx services, SQL queries, dashboards, and access controls.</p>
+          </article>
+          <article class="evidence-card">
+            <span class="evidence-value">MS RAS</span>
+            <h3>Robotics research foundation</h3>
+            <p>Building depth across control, safe reinforcement learning, visual odometry, MuJoCo simulation, and ROS-based robotics workflows.</p>
+          </article>
+        </div>
+
+        <div class="skill-strip" aria-label="Core technical skills">
+          <span>Embedded C</span>
+          <span>Python</span>
+          <span>SQL</span>
+          <span>SVPWM / FOC</span>
+          <span>ROS / ROS2</span>
+          <span>MATLAB / Simulink</span>
+          <span>MuJoCo</span>
+          <span>Docker</span>
         </div>
       </div>
     </section>
@@ -175,11 +242,14 @@
       <div class="section-shell two-column">
         <div>
           <p class="section-kicker">About</p>
-          <h2 id="about-title">Robotics, AI systems, control, and information organization.</h2>
+          <h2 id="about-title">Robotics, embedded control, AI systems, and information organization.</h2>
         </div>
         <div class="section-copy">
           <p>
-            My work focuses on robotics, AI systems, control, and information organization. I am interested in how agents can be designed, connected, and organized to solve real-world problems.
+            I am a robotics and embedded controls engineer pursuing an M.S. in Robotics and Autonomous Systems at Arizona State University. My work focuses on UAV gimbals, embedded motor control, human-exoskeleton interaction, safe control, and information organization.
+          </p>
+          <p>
+            I am interested in how agents can be designed, connected, and organized to solve real-world problems across hardware, software, and human-machine systems.
           </p>
         </div>
       </div>
@@ -190,15 +260,15 @@
         <div>
           <p class="section-kicker">Contact</p>
           <h2 id="contact-title">Connect and review my work.</h2>
-          <p>Replace these placeholder links with your live profiles, resume, and preferred email address.</p>
+          <p>GitHub and email are ready. Add your LinkedIn URL and resume PDF when you want those links to go live.</p>
         </div>
 
         <div class="contact-links" aria-label="Contact links">
-          <!-- Update these placeholder links before publishing your portfolio. -->
-          <a href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+          <!-- Update the LinkedIn URL and add assets/resume.pdf before publishing those links broadly. -->
+          <a href="https://github.com/YeshRobo" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="assets/resume.pdf">Resume</a>
-          <a href="mailto:your.email@example.com">Email</a>
+          <a href="mailto:yeshwanth.rg060694@gmail.com">Email</a>
         </div>
       </div>
     </section>
@@ -206,7 +276,7 @@
 
   <footer class="site-footer">
     <div class="section-shell footer-shell">
-      <span>&copy; <span id="current-year"></span> Agent Systems Portfolio</span>
+      <span>&copy; <span id="current-year"></span> Yeshwanth Reddy Gurredy</span>
       <a href="#top">Back to top</a>
     </div>
   </footer>

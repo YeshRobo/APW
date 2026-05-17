@@ -241,6 +241,27 @@ p {
   font-size: 1.13rem;
 }
 
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.hero-proof span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  border: 1px solid rgba(98, 230, 209, 0.28);
+  border-radius: 8px;
+  background: rgba(17, 20, 18, 0.68);
+  color: var(--muted-strong);
+  padding: 7px 11px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -319,7 +340,9 @@ p {
 .section-copy p:last-child,
 .section-heading p:last-child,
 .project-card p:last-child,
+.project-details:last-child,
 .info-card p:last-child,
+.evidence-card p:last-child,
 .contact-shell p:last-child {
   margin-bottom: 0;
 }
@@ -358,7 +381,8 @@ p {
 }
 
 .info-card,
-.project-card {
+.project-card,
+.evidence-card {
   min-height: 100%;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -368,7 +392,8 @@ p {
 }
 
 .info-card:hover,
-.project-card:hover {
+.project-card:hover,
+.evidence-card:hover {
   transform: translateY(-4px);
   border-color: rgba(98, 230, 209, 0.42);
   background: var(--surface-soft);
@@ -388,6 +413,46 @@ p {
 .project-meta {
   margin-bottom: 18px;
   color: var(--accent);
+}
+
+.project-details {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.project-details li + li {
+  margin-top: 8px;
+}
+
+.evidence-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.evidence-value {
+  display: inline-flex;
+  margin-bottom: 22px;
+  color: var(--accent-warm);
+  font-size: 1.55rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.skill-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.skill-strip span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(244, 241, 232, 0.05);
+  color: var(--muted-strong);
+  padding: 8px 11px;
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 .agent-scale {
@@ -527,7 +592,8 @@ p {
   }
 
   .framework-grid,
-  .project-grid {
+  .project-grid,
+  .evidence-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -584,6 +650,7 @@ p {
 
   .framework-grid,
   .project-grid,
+  .evidence-grid,
   .agent-scale,
   .contact-links {
     grid-template-columns: 1fr;

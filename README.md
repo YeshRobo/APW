@@ -1,10 +1,10 @@
 # Agents at Every Level of Intelligence
 
-This is a GitHub Pages-ready static website for a personal portfolio and philosophy project about agents as engineered systems.
+This is a GitHub Pages-ready static website for Yeshwanth Reddy Gurredy's personal portfolio and philosophy project about agents as engineered systems.
 
 The core idea is that agents exist at every intelligence level. An agent is any system that can perceive, think, and act. When agents are organized properly, they use information and energy to transform matter, motion, or knowledge.
 
-The site presents that idea as a professional engineering framework and connects it to robotics, control systems, human-machine systems, and information agents.
+The site presents that idea as a professional engineering framework and connects it to UAV gimbals, embedded controls, human-exoskeleton research, ThingWorx information systems, and information agents.
 
 ## Local Preview
 
@@ -39,7 +39,7 @@ GitHub Pages will publish the site using `index.html` as the entry file.
 
 ## Files Included
 
-- `index.html` - Main website structure and portfolio content.
+- `index.html` - Main website structure, portfolio content, project cards, experience evidence, and contact links.
 - `styles.css` - Responsive dark theme, layout, cards, navigation, and mobile styles.
 - `script.js` - Mobile navigation, active section highlighting, current year, and hero canvas visual.
 - `README.md` - Project overview, local preview instructions, and deployment steps.
@@ -47,7 +47,7 @@ GitHub Pages will publish the site using `index.html` as the entry file.
 
 ## Customization Notes
 
-- Update the contact links in `index.html` before publishing.
-- Replace `assets/resume.pdf` with your actual resume file if you want the resume link to work.
+- Update the LinkedIn link in `index.html` before publishing widely.
+- Add `assets/resume.pdf` if you want the resume link to work.
 - Edit the project cards in `index.html` as your UAV gimbal, exoskeleton, and library agent projects evolve.
 - Adjust colors and spacing in `styles.css` to match your personal brand.
