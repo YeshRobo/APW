@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Yeshwanth Reddy Gurredy's technical portfolio about robotics, embedded controls, human-machine systems, and agents that perceive, think, act, and transform.">
   <title>Yeshwanth Reddy Gurredy | Agent Systems Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -38,7 +40,7 @@
 
   <main id="main-content">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <!-- Canvas is drawn by script.js and gives the page a technical visual system without external assets. -->
+      <!-- Canvas is drawn by js/main.js and gives the page a technical visual system without external assets. -->
       <canvas id="agent-canvas" aria-hidden="true"></canvas>
       <div class="hero-shade" aria-hidden="true"></div>
 
@@ -126,50 +128,17 @@
       <div class="section-shell">
         <div class="section-heading">
           <p class="section-kicker">Engineering Projects</p>
-          <h2 id="projects-title">Concepts connected to real systems.</h2>
+          <h2 id="projects-title">Projects as Agents</h2>
           <p>
-            These examples show how the agent framework maps onto robotics, human-machine systems, and information organization.
+            Each project explores a different level of agency: control, human-machine interaction, information organization, and adaptive decision-making.
           </p>
         </div>
 
-        <div class="card-grid project-grid">
-          <article class="project-card">
-            <div class="project-meta">Control Agent</div>
-            <h3>UAV Gimbal &mdash; Control Agent</h3>
-            <p>
-              A UAV gimbal can be viewed as a limited mechanical agent. It perceives motion through sensors, thinks through control logic, and acts through motors to stabilize camera orientation.
-            </p>
-            <ul class="project-details">
-              <li>Owned system architecture for sensing, actuation, compute, power, and communication paths.</li>
-              <li>Implemented embedded C firmware, SVPWM, FOC, and cascaded stabilization loops on TI C2000 hardware.</li>
-              <li>Worked through bring-up issues across wiring, IMU orientation, encoder direction, electrical noise, and loop stability.</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <div class="project-meta">Human-Machine Agent</div>
-            <h3>Exoskeleton &mdash; Human-Machine Agent</h3>
-            <p>
-              An exoskeleton is a shared agent system. Human intention provides direction, while the machine senses, supports, and acts to augment movement.
-            </p>
-            <ul class="project-details">
-              <li>Researching effort-aware adaptive control for separating motion-driven effort from load-support effort.</li>
-              <li>Collected shoulder exoskeleton data from 10 subjects with joint, EMG, and 6-axis force/torque signals at 200 Hz.</li>
-              <li>Exploring CLF/CBF/QP-style safety constraints for assistance policies.</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <div class="project-meta">Information Agent</div>
-            <h3>Library Agent &mdash; Information Agent</h3>
-            <p>
-              My library agent converts scattered documents into useful information. It perceives text, organizes knowledge, retrieves relevant content, and acts by producing structured understanding.
-            </p>
-            <ul class="project-details">
-              <li>Frames document processing as an agent loop: ingest, structure, retrieve, reason, and respond.</li>
-              <li>Extends the same information-system thinking used in ThingWorx services, SQL-backed dashboards, and reusable data models.</li>
-              <li>Targets practical knowledge retrieval instead of vague automation.</li>
-            </ul>
-          </article>
-        </div>
+        <!-- Project cards are rendered from data/projects.js so new projects do not require HTML edits. -->
+        <div class="card-grid project-grid" data-projects></div>
+        <noscript>
+          <p class="noscript-note">Project cards require JavaScript. Use a local server or GitHub Pages to preview the modular site.</p>
+        </noscript>
       </div>
     </section>
 
@@ -281,6 +250,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

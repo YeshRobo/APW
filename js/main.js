@@ -1,66 +1,83 @@
-const header = document.querySelector("#site-header");
-const menuButton = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector("#primary-menu");
-const navAnchors = document.querySelectorAll(".nav-links a");
-const currentYear = document.querySelector("#current-year");
+import { renderProjects } from "./renderProjects.js";
 
-// Keep the copyright year current without editing the HTML each year.
-if (currentYear) {
-  currentYear.textContent = new Date().getFullYear();
-}
+function updateCurrentYear() {
+  const currentYear = document.querySelector("#current-year");
 
-// Add a subtle header state once the page starts scrolling.
-function updateHeaderState() {
-  header?.classList.toggle("is-scrolled", window.scrollY > 16);
-}
-
-updateHeaderState();
-window.addEventListener("scroll", updateHeaderState, { passive: true });
-
-// Mobile navigation toggles the same links used on desktop.
-menuButton?.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("is-open");
-  document.body.classList.toggle("menu-open", isOpen);
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-});
-
-navAnchors.forEach((anchor) => {
-  anchor.addEventListener("click", () => {
-    navLinks.classList.remove("is-open");
-    document.body.classList.remove("menu-open");
-    menuButton?.setAttribute("aria-expanded", "false");
-  });
-});
-
-// Highlight the navigation link for the section currently in view.
-const observedSections = [...document.querySelectorAll("main section[id]")];
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      navAnchors.forEach((anchor) => {
-        const isActive = anchor.getAttribute("href") === `#${entry.target.id}`;
-        anchor.classList.toggle("is-active", isActive);
-      });
-    });
-  },
-  {
-    rootMargin: "-45% 0px -45% 0px",
-    threshold: 0,
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
   }
-);
+}
 
-observedSections.forEach((section) => sectionObserver.observe(section));
+function setupHeaderState() {
+  const header = document.querySelector("#site-header");
 
-// Draw a lightweight agent-network visual in the hero canvas.
-const canvas = document.querySelector("#agent-canvas");
-const context = canvas?.getContext("2d");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  function updateHeaderState() {
+    header?.classList.toggle("is-scrolled", window.scrollY > 16);
+  }
 
-if (canvas && context) {
+  updateHeaderState();
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
+}
+
+function setupMobileNavigation() {
+  const menuButton = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector("#primary-menu");
+  const navAnchors = document.querySelectorAll(".nav-links a");
+
+  if (!menuButton || !navLinks) {
+    return;
+  }
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("is-open");
+    document.body.classList.toggle("menu-open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", () => {
+      navLinks.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+function setupActiveNavigation() {
+  const navAnchors = document.querySelectorAll(".nav-links a");
+  const observedSections = [...document.querySelectorAll("main section[id]")];
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        navAnchors.forEach((anchor) => {
+          const isActive = anchor.getAttribute("href") === `#${entry.target.id}`;
+          anchor.classList.toggle("is-active", isActive);
+        });
+      });
+    },
+    {
+      rootMargin: "-45% 0px -45% 0px",
+      threshold: 0,
+    }
+  );
+
+  observedSections.forEach((section) => sectionObserver.observe(section));
+}
+
+function setupHeroCanvas() {
+  const canvas = document.querySelector("#agent-canvas");
+  const context = canvas?.getContext("2d");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (!canvas || !context) {
+    return;
+  }
+
   const nodes = [];
   const nodeCount = 46;
   let width = 0;
@@ -172,3 +189,12 @@ if (canvas && context) {
   initializeCanvas();
   window.addEventListener("resize", initializeCanvas);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderProjects();
+  updateCurrentYear();
+  setupHeaderState();
+  setupMobileNavigation();
+  setupActiveNavigation();
+  setupHeroCanvas();
+});
