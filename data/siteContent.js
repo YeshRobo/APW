@@ -117,6 +117,18 @@ export const siteContent = {
     title: "Agent Systems Portfolio",
     intro:
       "Each project is explained through the agent loop: Perception, Agent Core, Action, Safety / Constraints, and Matter-State Transformation.",
+    guide: {
+      title: "How to Read These Projects",
+      body:
+        "Each project is shown as an agent system. The card starts with the current matter state, then shows how the system perceives that state, processes it inside an Agent Core, acts on the system, and creates a new matter state. Evidence / Outcome shows what I actually built, tested, measured, simulated, or analyzed.",
+      flow: [
+        "Current Matter State",
+        "Perception",
+        "Agent Core",
+        "Action",
+        "New Matter State",
+      ],
+    },
     noscript:
       "Project cards require JavaScript. Use a local server or GitHub Pages to preview the modular site.",
     skills: [

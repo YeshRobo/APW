@@ -27,6 +27,16 @@ function createTagList(items) {
   return tagList;
 }
 
+function createBulletList(items) {
+  const list = createElement("ul", "project-bullet-list");
+
+  items.forEach((item) => {
+    list.append(createElement("li", null, item));
+  });
+
+  return list;
+}
+
 function createValueElement(value) {
   if (Array.isArray(value)) {
     return createTagList(value);
@@ -42,10 +52,10 @@ function createProjectSection(title, value) {
   return section;
 }
 
-function createProjectDetail(label, value) {
+function createProjectDetail(label, value, variant) {
   const detail = createElement("div", "project-detail");
   detail.append(createElement("p", "project-detail-label", label));
-  detail.append(createValueElement(value));
+  detail.append(variant === "bullets" ? createBulletList(value) : createValueElement(value));
   return detail;
 }
 
@@ -54,7 +64,7 @@ function createProjectPhase(title, details) {
   phase.append(createElement("h4", null, title));
 
   details.forEach((detail) => {
-    phase.append(createProjectDetail(detail.label, detail.value));
+    phase.append(createProjectDetail(detail.label, detail.value, detail.variant));
   });
 
   return phase;
@@ -66,25 +76,28 @@ function createProjectLoop(project) {
   loop.append(
     createProjectPhase("Perception", [
       { label: "What it needs to perceive", value: project.perceptionNeeds },
-      { label: "What I used to perceive it", value: project.perceptionTools },
+      { label: "What was used", value: project.perceptionTools },
+      { label: "My contribution", value: project.perceptionContribution, variant: "bullets" },
     ])
   );
   loop.append(
     createProjectPhase("Agent Core", [
       { label: "What it needs to do", value: project.agentCoreNeeds },
-      { label: "How I achieved it", value: project.agentCoreImplementation },
+      { label: "What was used", value: project.agentCoreImplementation },
+      { label: "My contribution", value: project.agentCoreContribution, variant: "bullets" },
     ])
   );
   loop.append(
     createProjectPhase("Action", [
       { label: "What it needs to change", value: project.actionNeeds },
-      { label: "What I used to act", value: project.actionTools },
+      { label: "What was used", value: project.actionTools },
+      { label: "My contribution", value: project.actionContribution, variant: "bullets" },
     ])
   );
   loop.append(
     createProjectPhase("Safety / Constraints", [
       { label: "What must be prevented", value: project.safetyNeeds },
-      { label: "What I used to keep it safe", value: project.safetyImplementation },
+      { label: "What was used to keep it safe", value: project.safetyImplementation },
     ])
   );
 

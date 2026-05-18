@@ -182,6 +182,18 @@ function renderPortfolioSkillList() {
   );
 }
 
+function renderPortfolioGuideFlow() {
+  const container = document.querySelector("[data-portfolio-guide-flow]");
+
+  if (!container) {
+    return;
+  }
+
+  container.replaceChildren(
+    ...siteContent.portfolio.guide.flow.map((item) => createElement("span", null, item))
+  );
+}
+
 function renderSpectrumList() {
   const container = document.querySelector("[data-spectrum-list]");
 
@@ -204,6 +216,7 @@ export async function renderSiteContent(version) {
   renderHeroActions();
   renderPhilosophyCopy();
   renderFrameworkCards();
+  renderPortfolioGuideFlow();
   renderPortfolioSkillList();
   renderSpectrumList();
   renderParagraphList("[data-about-copy]", siteContent.about.paragraphs);

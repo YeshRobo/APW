@@ -34,7 +34,7 @@ The full page order is:
 6. About
 7. Contact
 
-The Agent Systems Portfolio section contains detailed project cards and a skills strip. Concrete evidence belongs inside each project's Evidence / Outcome field.
+The Agent Systems Portfolio section contains a short guide card, detailed project cards, and a skills strip. Concrete evidence belongs inside each project's Evidence / Outcome field.
 
 ## Project Data
 
@@ -51,10 +51,13 @@ Each project object uses this structure:
   stateToChange: "...",
   perceptionNeeds: "...",
   perceptionTools: ["..."],
+  perceptionContribution: ["..."],
   agentCoreNeeds: "...",
   agentCoreImplementation: ["..."],
+  agentCoreContribution: ["..."],
   actionNeeds: "...",
   actionTools: ["..."],
+  actionContribution: ["..."],
   safetyNeeds: "...",
   safetyImplementation: ["..."],
   matterStateTransformation: "...",
@@ -74,9 +77,9 @@ Project Title — Agent Type
 
 Problem
 State to Change
-Perception
-Agent Core
-Action
+Perception: what it needs, what was used, my contribution
+Agent Core: what it needs, what was used, my contribution
+Action: what it needs, what was used, my contribution
 Safety / Constraints
 Matter-State Transformation
 Evidence / Outcome
@@ -98,7 +101,7 @@ Use this map when you want to change the website:
 | Core philosophy text and equation | `data/siteContent.js` | `philosophy` |
 | Spectrum of Agents | `data/siteContent.js` | `spectrum` |
 | Matter State / Perception / Agent Core / Action cards | `data/siteContent.js` | `framework` |
-| Agent Systems Portfolio heading and skills | `data/siteContent.js` | `portfolio` |
+| Agent Systems Portfolio heading, guide card, and skills | `data/siteContent.js` | `portfolio` |
 | Project cards and agent-loop fields | `data/projects.js` | project objects |
 | About section | `data/siteContent.js` | `about` |
 | Contact links | `data/siteContent.js` | `contact.links` |
@@ -115,9 +118,10 @@ Most visible content is filled by `js/renderSiteContent.js` and `js/renderProjec
 2. Copy one existing project object.
 3. Paste it inside the `projects` array.
 4. Change `id`, `title`, and `agentType`.
-5. Update every agent-loop field.
-6. Keep `evidenceOutcome` short and concrete.
-7. Add real URLs in `links` when code, details, or demos are ready.
+5. Update the `perception*`, `agentCore*`, and `action*` fields with what the agent needs, what was used, and your contribution.
+6. Update the safety fields.
+7. Keep `evidenceOutcome` short and concrete.
+8. Add real URLs in `links` when code, details, or demos are ready.
 
 ## Run Locally
 

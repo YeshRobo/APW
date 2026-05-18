@@ -19,15 +19,27 @@ export const projects = [
       "Position sensors",
       "Encoder feedback",
       "Orientation error signals",
+      "Bench logging",
+    ],
+    perceptionContribution: [
+      "Defined the sensor signal flow used by the stabilization loops.",
+      "Worked through IMU orientation, encoder direction, axis mapping, mounting, wiring, and sanity checks during bring-up.",
     ],
     agentCoreNeeds:
       "It needs to convert sensor feedback into correction commands that reduce orientation error.",
     agentCoreImplementation: [
+      "TI TMS320F28379",
+      "Embedded C",
+      "Code Composer Studio",
       "Control logic",
       "PID or cascaded control structure",
       "Motor control logic",
       "Tuning workflow",
       "Embedded firmware",
+    ],
+    agentCoreContribution: [
+      "Owned the embedded control architecture and implemented firmware tasks, PWM generation, sensor drivers, and cascaded loops.",
+      "Tuned motor/stabilization behavior and added practical hooks for hardware iteration.",
     ],
     actionNeeds:
       "It needs to change the camera orientation and reject external motion disturbances.",
@@ -35,8 +47,13 @@ export const projects = [
       "Motor commands",
       "FOC",
       "SVPWM",
+      "BLDC motors",
       "Actuator control",
       "Corrective torque generation",
+    ],
+    actionContribution: [
+      "Implemented FOC/SVPWM motor-control behavior and corrective torque generation.",
+      "Validated actuator direction, phase/rotation behavior, and closed-loop response during integration.",
     ],
     safetyNeeds:
       "Over-rotation, unstable motor behavior, unsafe startup, sensor failure response, and excessive current must be prevented.",
@@ -68,12 +85,17 @@ export const projects = [
     perceptionNeeds:
       "The system needs to perceive human-machine interaction, user movement, muscle activity, joint motion, and interaction forces.",
     perceptionTools: [
+      "Python",
       "EMG",
       "Joint kinematics",
-      "Force/torque sensing",
+      "6-axis force/torque sensing",
       "Motion data",
       "Synchronized experiment logs",
       "Subject-session data",
+    ],
+    perceptionContribution: [
+      "Ran 10 shoulder exoskeleton human-subject sessions and managed experimental execution.",
+      "Logged synchronized joint position, velocity, EMG, and interaction torque data at 200 Hz.",
     ],
     agentCoreNeeds:
       "It needs to estimate movement, effort, assistance needs, and safe interaction behavior.",
@@ -83,6 +105,12 @@ export const projects = [
       "Control logic",
       "Data processing",
       "Human-subject experimental workflow",
+      "Safety-constrained control concepts",
+    ],
+    agentCoreContribution: [
+      "Processed experiment data for model-vs-baseline analysis and effort-aware control research.",
+      "Redesigned visual feedback logic to better separate model and baseline behavior.",
+      "Studied CBF/QP-style safety-constrained control formulations for safe interaction analysis.",
     ],
     actionNeeds:
       "It needs to influence or support limb movement while remaining aligned with the user's intent.",
@@ -91,6 +119,11 @@ export const projects = [
       "Actuator behavior",
       "Assistance strategies",
       "Wearable robotics structure",
+      "Experiment workflow",
+    ],
+    actionContribution: [
+      "Connected collected interaction signals and analysis workflow to assistance and safety behavior requirements.",
+      "Implemented revised visual-feedback behavior inside the Python experimental workflow.",
     ],
     safetyNeeds:
       "Unsafe torque, uncomfortable assistance, joint-limit violation, unstable interaction, and user risk must be prevented.",
@@ -131,6 +164,10 @@ export const projects = [
       "Time-series data ingestion",
       "InfoTables",
     ],
+    perceptionContribution: [
+      "Analyzed legacy application data flows, SQL source data, site/asset relationships, and dashboard requirements.",
+      "Integrated time-series SQL data into ThingWorx properties, services, and dashboard-facing data structures.",
+    ],
     agentCoreNeeds:
       "It needs to organize footfall and POS-related data, map it to sites and assets, standardize service logic, enforce access rules, and produce reusable analytics views.",
     agentCoreImplementation: [
@@ -142,6 +179,10 @@ export const projects = [
       "Reusable dashboard components",
       "User and group management",
     ],
+    agentCoreContribution: [
+      "Built ThingWorx Things, ThingShapes, ThingTemplates, services, InfoTables, SQL queries, and access-control structures.",
+      "Standardized reusable dashboard services and data access patterns for multiple retail sites and assets.",
+    ],
     actionNeeds:
       "It needs to change raw retail count and transaction-related data into dashboards, reusable services, and operational views for multiple sites and assets.",
     actionTools: [
@@ -151,6 +192,10 @@ export const projects = [
       "Access-controlled views",
       "Dev/test/prod deployments",
       "Iterative stakeholder demos",
+    ],
+    actionContribution: [
+      "Built dashboards and operational views with periodic refresh and access-controlled deployment behavior.",
+      "Supported dev/test/prod deployments, troubleshooting, stakeholder demos, and iteration with controls, QA, and product teams.",
     ],
     safetyNeeds:
       "Incorrect footfall/POS interpretation, stale data, unauthorized access, broken dashboards, environment mismatch, and duplicated service logic must be prevented.",
@@ -183,12 +228,17 @@ export const projects = [
     perceptionNeeds:
       "The system needs to perceive document content, headings, sections, file structure, relationships between ideas, and user information needs.",
     perceptionTools: [
-      "Markdown parsing",
+      "Python",
+      "Markdown files",
+      "Document parsing",
       "Text extraction",
-      "File reading",
       "Metadata extraction",
       "Document chunking",
       "Search input",
+    ],
+    perceptionContribution: [
+      "Designed the parsing, extraction, chunking, and source-validation workflow for Markdown document sources.",
+      "Added source tracking around document ingestion so generated structure can stay tied to source material.",
     ],
     agentCoreNeeds:
       "It needs to organize, retrieve, link, summarize, and structure document content into usable representations.",
@@ -200,6 +250,10 @@ export const projects = [
       "Relationship mapping",
       "Information organization logic",
     ],
+    agentCoreContribution: [
+      "Built indexing, retrieval, organization, summarization, and relationship-mapping logic around source documents.",
+      "Structured representations to separate source text from generated summaries and organized views.",
+    ],
     actionNeeds:
       "It needs to change scattered documents into an organized and searchable document system.",
     actionTools: [
@@ -209,6 +263,10 @@ export const projects = [
       "Structured summaries",
       "Organized views",
       "File/document updates where appropriate",
+    ],
+    actionContribution: [
+      "Generated searchable views, links, summaries, and organized document outputs.",
+      "Focused update behavior on controlled file/document changes where appropriate.",
     ],
     safetyNeeds:
       "Information loss, duplicate confusion, broken links, unsupported rewriting, source ambiguity, and hallucinated structure must be prevented.",
@@ -241,12 +299,17 @@ export const projects = [
     perceptionNeeds:
       "The agent needs to perceive vehicle state, goal position, obstacle distance, moving-agent context, valid control choices, and unsafe regions.",
     perceptionTools: [
+      "Python",
       "Kinematic bicycle-model state",
       "Ackermann steering environment",
       "LiDAR-style range sensing",
       "Obstacle and moving-agent scenarios",
       "Goal state",
       "Action/control space",
+    ],
+    perceptionContribution: [
+      "Modeled the vehicle/environment state, obstacle scenarios, moving agents, and LiDAR-style range sensing used by the policy.",
+      "Implemented the state/action observation pipeline for simulated ground-vehicle navigation.",
     ],
     agentCoreNeeds:
       "It needs to learn a goal-reaching navigation policy while estimating and respecting safety constraints.",
@@ -258,6 +321,11 @@ export const projects = [
       "Safety pre-training ablations",
       "Policy gradient restriction experiments",
     ],
+    agentCoreContribution: [
+      "Implemented the Certificated Actor-Critic safe reinforcement learning framework and CBF-based safety critic.",
+      "Trained and evaluated the learned policy against a reward-shaped baseline using success and collision behavior.",
+      "Ran ablations on safety pre-training duration and policy gradient restriction.",
+    ],
     actionNeeds:
       "It needs to change the vehicle position and heading while keeping the trajectory goal-directed and collision-aware.",
     actionTools: [
@@ -265,6 +333,10 @@ export const projects = [
       "Ackermann steering commands",
       "Kinematic bicycle-model control inputs",
       "Safe policy update behavior",
+    ],
+    actionContribution: [
+      "Implemented the action/control interface for Ackermann-steered bicycle-model vehicle movement.",
+      "Evaluated policy-selected actions across static and moving-obstacle navigation scenarios.",
     ],
     safetyNeeds:
       "Collision with obstacles or moving agents, unsafe state transitions, invalid controls, repeated failure loops, and unsafe learned behavior must be prevented.",
