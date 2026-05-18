@@ -149,7 +149,13 @@ function renderPhilosophyCopy() {
   const result = createElement("strong", null, siteContent.philosophy.equation.result);
 
   equation.replaceChildren(...equationParts, result);
-  container.replaceChildren(...paragraphs.slice(0, 4), equation, ...paragraphs.slice(4));
+
+  const deeperLink = createElement("a", "button secondary", siteContent.philosophy.deeperLink.label);
+  deeperLink.href = siteContent.philosophy.deeperLink.href;
+  const actions = createElement("div", "section-actions");
+  actions.append(deeperLink);
+
+  container.replaceChildren(...paragraphs.slice(0, 4), equation, ...paragraphs.slice(4), actions);
 }
 
 function renderFrameworkCards() {

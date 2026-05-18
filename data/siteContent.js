@@ -18,7 +18,8 @@ export const siteContent = {
 
   // Header navigation. Add or remove links here if you add/remove sections.
   navigation: [
-    { label: "Philosophy", href: "#philosophy" },
+    { label: "Home", href: "#top" },
+    { label: "Philosophy", href: "philosophy.html" },
     { label: "Spectrum", href: "#spectrum" },
     { label: "Framework", href: "#framework" },
     { label: "Portfolio", href: "#portfolio" },
@@ -60,6 +61,10 @@ export const siteContent = {
       label: "Core framework",
       parts: ["Current System State", "\\u2192", "Perception", "\\u2192", "Agent Core", "\\u2192", "Action", "\\u2192"],
       result: "Changed System State",
+    },
+    deeperLink: {
+      label: "Read the deeper philosophy",
+      href: "philosophy.html",
     },
   },
 

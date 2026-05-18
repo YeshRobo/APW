@@ -1,7 +1,7 @@
 // EDIT THIS FILE to add, remove, or modify portfolio projects.
 // To add a project: copy one object, give it a unique id, and update every field.
 // To remove a project: delete the whole object, including its surrounding braces and comma.
-// Leave a link value empty when it is not ready; the card will show it as Coming Soon.
+// Use disabled link labels for private code, private data, or planned demos.
 
 export const projects = [
   {
@@ -68,11 +68,11 @@ export const projects = [
       "Unstable camera orientation -> stabilized camera alignment.",
     evidenceOutcome:
       "Worked on architecture, integration flow, embedded motor control, safety behavior, and tuning workflow for a compact 2-axis UAV EO gimbal.",
-    links: {
-      code: "",
-      details: "",
-      demo: "",
-    },
+    links: [
+      { label: "Details", href: "projects/uav-gimbal.html" },
+      { label: "Code Private", disabled: true },
+      { label: "Demo Coming Soon", disabled: true },
+    ],
   },
   {
     id: "exoskeleton",
@@ -139,11 +139,11 @@ export const projects = [
       "Unsupported or high-effort movement -> assisted human-machine movement.",
     evidenceOutcome:
       "Ran 10 human-subject sessions and logged synchronized kinematics, EMG, and interaction torque data for model-vs-baseline analysis.",
-    links: {
-      code: "",
-      details: "",
-      demo: "",
-    },
+    links: [
+      { label: "Details", href: "projects/exoskeleton.html" },
+      { label: "Data Private", disabled: true },
+      { label: "Research Notes Coming Soon", disabled: true },
+    ],
   },
   {
     id: "thingworx-monitoring",
@@ -211,11 +211,11 @@ export const projects = [
       "Raw footfall, POS-related, and asset records -> reusable, access-controlled retail analytics dashboards and operational views.",
     evidenceOutcome:
       "Migrated the existing retail people-counting analytics system end-to-end into PTC ThingWorx, integrated SQL time-series data for footfall/POS-style analysis across about 10 sites and 70 assets, and built reusable services, dashboards, and access controls.",
-    links: {
-      code: "",
-      details: "https://www.delopt.co.in/retail-people-counting-solution/",
-      demo: "",
-    },
+    links: [
+      { label: "Details", href: "projects/retail-people-counting.html" },
+      { label: "Code Private", disabled: true },
+      { label: "Architecture Coming Soon", disabled: true },
+    ],
   },
   {
     id: "library-agent",
@@ -282,11 +282,11 @@ export const projects = [
       "Scattered documents -> organized, searchable document system.",
     evidenceOutcome:
       "Currently building a Python-based document agent for Markdown files that organizes scattered documents into searchable and useful structures.",
-    links: {
-      code: "",
-      details: "",
-      demo: "",
-    },
+    links: [
+      { label: "Details", href: "projects/library-agent.html" },
+      { label: "View Code", href: "https://github.com/YeshRobo/ml-knowledge-base", external: true },
+      { label: "Demo Coming Soon", disabled: true },
+    ],
   },
   {
     id: "rl-car-navigation",
@@ -352,10 +352,10 @@ export const projects = [
       "Initial vehicle pose -> goal-reaching trajectory while avoiding unsafe obstacle states.",
     evidenceOutcome:
       "Implemented a Certificated Actor-Critic safe reinforcement learning framework with a CBF-based safety critic, kinematic bicycle-model environment, Ackermann steering, LiDAR-style sensing, baseline comparison, and safety ablations.",
-    links: {
-      code: "",
-      details: "",
-      demo: "",
-    },
+    links: [
+      { label: "Details", href: "projects/rl-safe-navigation.html" },
+      { label: "View Code", href: "https://github.com/YeshRobo/RL_A", external: true },
+      { label: "Demo Coming Soon", disabled: true },
+    ],
   },
 ];

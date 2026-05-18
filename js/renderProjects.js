@@ -106,31 +106,28 @@ function createProjectLoop(project) {
 
 function createProjectLinks(links) {
   const linkContainer = createElement("div", "project-links");
-  const linkLabels = [
-    ["code", "Code"],
-    ["details", "Details"],
-    ["demo", "Demo"],
-  ];
 
-  linkLabels.forEach(([key, label]) => {
-    const href = links?.[key];
+  if (!Array.isArray(links)) {
+    return linkContainer;
+  }
 
-    if (href) {
-      const link = createElement("a", "project-link", label);
-      link.href = href;
-
-      if (href.startsWith("http")) {
-        link.target = "_blank";
-        link.rel = "noreferrer";
-      }
-
-      linkContainer.append(link);
+  links.forEach((linkData) => {
+    if (linkData.disabled || !linkData.href) {
+      const disabledLink = createElement("span", "project-link is-disabled", linkData.label);
+      disabledLink.setAttribute("aria-disabled", "true");
+      linkContainer.append(disabledLink);
       return;
     }
 
-    const disabledLink = createElement("span", "project-link is-disabled", `${label}: Coming Soon`);
-    disabledLink.setAttribute("aria-label", `${label} coming soon`);
-    linkContainer.append(disabledLink);
+    const link = createElement("a", "project-link", linkData.label);
+    link.href = linkData.href;
+
+    if (linkData.external || linkData.href.startsWith("http")) {
+      link.target = "_blank";
+      link.rel = "noreferrer";
+    }
+
+    linkContainer.append(link);
   });
 
   return linkContainer;
