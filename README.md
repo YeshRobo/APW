@@ -34,7 +34,7 @@ The homepage order is:
 6. About
 7. Contact
 
-The Agent Systems Portfolio section contains a short guide card, detailed project cards, and a skills strip. Concrete evidence belongs inside each project's Evidence / Outcome field.
+The Agent Systems Portfolio section contains a short guide card, concise project summary cards, and a skills strip. Full technical explanations live on the individual project detail pages reached through each card's Details button.
 
 The site also includes standalone static pages:
 
@@ -43,7 +43,7 @@ The site also includes standalone static pages:
 - `projects/exoskeleton.html` - Exoskeleton case study.
 - `projects/retail-people-counting.html` - Retail People Counting Analytics System case study.
 - `projects/library-agent.html` - Library Agent case study.
-- `projects/rl-safe-navigation.html` - RL Car Navigation case study.
+- `projects/rl-safe-navigation.html` - RL Safe Navigation case study.
 
 Each project page follows this structure:
 
@@ -51,12 +51,13 @@ Each project page follows this structure:
 2. Problem
 3. Current System State
 4. Agent Loop
-5. Technologies Used
-6. My Contribution
-7. Evidence / Outcome
-8. Limitations
-9. Next Steps
-10. Links
+5. System State Change
+6. Evidence / Outcome
+7. Limitations
+8. Next Steps
+9. Links
+
+The Agent Loop section contains Perception, Agent Core, Action, and Safety / Constraints panels. Perception, Agent Core, and Action include phase-level My contribution notes.
 
 ## Project Data
 
@@ -64,32 +65,18 @@ Homepage project cards are data-driven. To add, remove, or edit project cards, u
 
 Detailed project pages are rendered from `data/projectDetails.js` by `js/projectDetailPage.js`.
 
-Each project object uses this structure:
+Each homepage project object uses this compact structure:
 
 ```js
 {
   id: "project-id",
   title: "Project Title",
   agentType: "Agent Type",
-  problem: "...",
-  currentSystemState: "...",
-  perceptionNeeds: "...",
-  perceptionTools: ["..."],
-  perceptionContribution: ["..."],
-  agentCoreNeeds: "...",
-  agentCoreImplementation: ["..."],
-  agentCoreContribution: ["..."],
-  actionNeeds: "...",
-  actionTools: ["..."],
-  actionContribution: ["..."],
-  safetyNeeds: "...",
-  safetyImplementation: ["..."],
-  systemStateChange: "...",
-  evidenceOutcome: "...",
+  summary: "1-2 sentence homepage summary.",
+  technologies: ["Key technology", "Another technology"],
   links: [
     { label: "Details", href: "projects/project-page.html" },
-    { label: "View Code", href: "https://github.com/...", external: true },
-    { label: "Demo Coming Soon", disabled: true }
+    { label: "View Code", href: "https://github.com/...", external: true }
   ]
 }
 ```
@@ -97,17 +84,11 @@ Each project object uses this structure:
 The renderer in `js/renderProjects.js` displays each project as:
 
 ```text
-Project Title — Agent Type
-
-Problem
-Current System State
-Perception: what it needs, what was used, my contribution
-Agent Core: what it needs, what was used, my contribution
-Action: what it needs, what was used, my contribution
-Safety / Constraints
-System State Change
-Evidence / Outcome
-Links
+Project Title
+Agent Type
+Summary
+Key Technologies
+Buttons
 ```
 
 Use disabled link labels for private code, private data, planned demos, or future notes. Do not show fake public-code buttons for projects where code cannot be shared.
@@ -118,11 +99,11 @@ Some projects have public code; others are case studies because the work is hard
 
 | Project | Public code status | Site button strategy |
 | --- | --- | --- |
-| UAV Gimbal | Code private | Case Study, Code Private, Demo Coming Soon |
-| Exoskeleton | Data private | Case Study, Data Private, Research Notes Coming Soon |
-| Retail People Counting Analytics System | Code private | Case Study, Code Private, Architecture Coming Soon |
-| Library Agent | Public code | View Code, Case Study, Demo Coming Soon |
-| RL Car Navigation | Public code | View Code, Case Study, Demo Coming Soon |
+| UAV Gimbal | Code private | Homepage: Details, Code Private. Detail page: Back to Portfolio, Code Private, Demo Coming Soon |
+| Exoskeleton | Data private | Homepage: Details, Data Private. Detail page: Back to Portfolio, Data Private, Research Notes Coming Soon |
+| Retail People Counting Analytics System | Code private | Homepage: Details, Code Private. Detail page: Back to Portfolio, Code Private, Architecture Coming Soon |
+| Library Agent | Public code | Homepage: Details, View Code. Detail page: Back to Portfolio, View Code, Demo Coming Soon |
+| RL Safe Navigation | Public code | Homepage: Details, View Code. Detail page: Back to Portfolio, View Code, Demo Coming Soon |
 
 ## Editing Map
 
@@ -138,7 +119,7 @@ Use this map when you want to change the website:
 | Spectrum of Agents | `data/siteContent.js` | `spectrum` |
 | Current System State / Perception / Agent Core / Action cards | `data/siteContent.js` | `framework` |
 | Agent Systems Portfolio heading, guide card, and skills | `data/siteContent.js` | `portfolio` |
-| Project cards and agent-loop fields | `data/projects.js` | project objects |
+| Homepage project summary cards | `data/projects.js` | project objects |
 | Project detail pages | `data/projectDetails.js` | project detail objects |
 | About section | `data/siteContent.js` | `about` |
 | Contact links | `data/siteContent.js` | `contact.links` |
@@ -155,11 +136,10 @@ Homepage visible content is filled by `js/renderSiteContent.js` and `js/renderPr
 2. Copy one existing project object.
 3. Paste it inside the `projects` array.
 4. Change `id`, `title`, and `agentType`.
-5. Update the `perception*`, `agentCore*`, and `action*` fields with what the agent needs, what was used, and your contribution.
-6. Update the safety fields.
-7. Keep `evidenceOutcome` short and concrete.
-8. Add a `Details` link in `links` that points to the new page under `projects/`.
-9. Add only real public-code URLs. Use disabled labels such as `Code Private`, `Data Private`, or `Demo Coming Soon` when needed.
+5. Write a short `summary` for the homepage card.
+6. Add `technologies` tags for the card.
+7. Add a `Details` link in `links` that points to the new page under `projects/`.
+8. Add only real public-code URLs. Use disabled labels such as `Code Private`, `Data Private`, or `Demo Coming Soon` when needed.
 
 ## Add a New Project Page
 
@@ -168,7 +148,8 @@ Homepage visible content is filled by `js/renderSiteContent.js` and `js/renderPr
 3. Change the `data-project-id` value on the `<body>` to match the new object key.
 4. Update the page title and fallback description.
 5. Add a `Details` link for the project in `data/projects.js`.
-6. Keep the project page honest about public code, private code, private data, limitations, and next steps.
+6. Fill in Problem, Current System State, phase-level Agent Loop content, System State Change, Evidence / Outcome, Limitations, Next Steps, and Links.
+7. Keep the project page honest about public code, private code, private data, limitations, and next steps.
 
 ## Run Locally
 

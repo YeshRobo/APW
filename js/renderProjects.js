@@ -27,89 +27,15 @@ function createTagList(items) {
   return tagList;
 }
 
-function createBulletList(items) {
-  const list = createElement("ul", "project-bullet-list");
-
-  items.forEach((item) => {
-    list.append(createElement("li", null, item));
-  });
-
-  return list;
-}
-
-function createValueElement(value) {
-  if (Array.isArray(value)) {
-    return createTagList(value);
-  }
-
-  return createElement("p", null, value);
-}
-
 function createProjectSection(title, value) {
   const section = createElement("div", "project-section");
   section.append(createElement("h4", null, title));
-  section.append(value instanceof Node ? value : createValueElement(value));
+  section.append(value instanceof Node ? value : createElement("p", null, value));
   return section;
-}
-
-function createProjectDetail(label, value, variant) {
-  const detail = createElement("div", "project-detail");
-  detail.append(createElement("p", "project-detail-label", label));
-  detail.append(variant === "bullets" ? createBulletList(value) : createValueElement(value));
-  return detail;
-}
-
-function createProjectPhase(title, details) {
-  const phase = createElement("section", "project-phase");
-  phase.append(createElement("h4", null, title));
-
-  details.forEach((detail) => {
-    phase.append(createProjectDetail(detail.label, detail.value, detail.variant));
-  });
-
-  return phase;
-}
-
-function createProjectLoop(project) {
-  const loop = createElement("div", "project-loop");
-
-  loop.append(
-    createProjectPhase("Perception", [
-      { label: "What it needs to perceive", value: project.perceptionNeeds },
-      { label: "What was used", value: project.perceptionTools },
-      { label: "My contribution", value: project.perceptionContribution, variant: "bullets" },
-    ])
-  );
-  loop.append(
-    createProjectPhase("Agent Core", [
-      { label: "What it needs to do", value: project.agentCoreNeeds },
-      { label: "What was used", value: project.agentCoreImplementation },
-      { label: "My contribution", value: project.agentCoreContribution, variant: "bullets" },
-    ])
-  );
-  loop.append(
-    createProjectPhase("Action", [
-      { label: "What it needs to change", value: project.actionNeeds },
-      { label: "What was used", value: project.actionTools },
-      { label: "My contribution", value: project.actionContribution, variant: "bullets" },
-    ])
-  );
-  loop.append(
-    createProjectPhase("Safety / Constraints", [
-      { label: "What must be prevented", value: project.safetyNeeds },
-      { label: "What was used to keep it safe", value: project.safetyImplementation },
-    ])
-  );
-
-  return loop;
 }
 
 function createProjectLinks(links) {
   const linkContainer = createElement("div", "project-links");
-
-  if (!Array.isArray(links)) {
-    return linkContainer;
-  }
 
   links.forEach((linkData) => {
     if (linkData.disabled || !linkData.href) {
@@ -134,19 +60,17 @@ function createProjectLinks(links) {
 }
 
 function createProjectCard(project) {
-  const card = createElement("article", "project-card");
+  const card = createElement("article", "project-card project-card-summary");
   card.id = project.id;
 
   const header = createElement("div", "project-card-header");
-  header.append(createElement("h3", null, `${project.title} \u2014 ${project.agentType}`));
+  header.append(createElement("h3", null, project.title));
+  header.append(createElement("p", "agent-type", project.agentType));
 
   card.append(header);
-  card.append(createProjectSection("Problem", project.problem));
-  card.append(createProjectSection("Current System State", project.currentSystemState));
-  card.append(createProjectLoop(project));
-  card.append(createProjectSection("System State Change", project.systemStateChange));
-  card.append(createProjectSection("Evidence / Outcome", project.evidenceOutcome));
-  card.append(createProjectSection("Links", createProjectLinks(project.links)));
+  card.append(createProjectSection("Summary", project.summary));
+  card.append(createProjectSection("Key Technologies", createTagList(project.technologies)));
+  card.append(createProjectSection("Buttons", createProjectLinks(project.links)));
 
   return card;
 }

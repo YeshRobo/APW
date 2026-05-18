@@ -133,7 +133,7 @@ export const siteContent = {
     guide: {
       title: "How to Read These Projects",
       body:
-        "Each project is shown as an agent system. The card starts with the current system state, then shows what the system needs to perceive, how the Agent Core processes that perception, how the system acts, and what system state change is created. Evidence / Outcome shows what I actually built, tested, measured, simulated, logged, implemented, integrated, or analyzed.",
+        "Each homepage card gives a short recruiter-friendly summary, key technologies, and honest links. Use Details to open the full project page with the current system state, agent loop, phase-level contributions, evidence, limitations, and next steps.",
       flow: [
         "Current System State",
         "Perception",

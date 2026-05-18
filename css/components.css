@@ -299,6 +299,20 @@
   margin-bottom: 8px;
 }
 
+.project-card-summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-summary .project-section:last-child {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.project-card-summary .project-links {
+  margin-top: 0;
+}
+
 .agent-type {
   display: inline-flex;
   color: var(--accent);
@@ -759,6 +773,11 @@
   .button,
   .detail-actions,
   .detail-button {
+    width: 100%;
+  }
+
+  .project-links,
+  .project-link {
     width: 100%;
   }
 }

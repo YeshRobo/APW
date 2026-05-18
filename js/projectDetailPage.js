@@ -54,17 +54,21 @@ function createTextBlock(title, body) {
   return block;
 }
 
-function createLoopPanel(title, body, used) {
+function createDetailGroup(label, value) {
+  const group = createElement("div", "project-detail");
+  group.append(createElement("p", "project-detail-label", label));
+  group.append(Array.isArray(value) ? createBulletList(value) : createElement("p", null, value));
+  return group;
+}
+
+function createPhasePanel(phase) {
   const panel = createElement("article", "detail-panel");
-  panel.append(createElement("h3", null, title));
+  panel.append(createElement("h3", null, phase.title));
+  panel.append(createDetailGroup(phase.needLabel, phase.need));
+  panel.append(createDetailGroup(phase.usedLabel, phase.used));
 
-  if (body) {
-    panel.append(createElement("p", null, body));
-  }
-
-  if (used?.length) {
-    panel.append(createElement("p", "detail-panel-label", "Used"));
-    panel.append(createBulletList(used));
+  if (phase.contribution?.length) {
+    panel.append(createDetailGroup("My contribution", phase.contribution));
   }
 
   return panel;
@@ -81,34 +85,9 @@ function createAgentLoop(project) {
   block.append(flow);
 
   const grid = createElement("div", "detail-panel-grid");
-  grid.append(createLoopPanel("Perception", project.loop.perception.body, project.loop.perception.used));
-  grid.append(createLoopPanel("Agent Core", project.loop.agentCore.body, project.loop.agentCore.used));
-  grid.append(createLoopPanel("Action", project.loop.action.body, project.loop.action.used));
-  grid.append(createLoopPanel("Safety / Constraints", project.loop.safety.body, project.loop.safety.used));
-  grid.append(createLoopPanel("System State Change", project.loop.systemStateChange));
+  project.phases.forEach((phase) => grid.append(createPhasePanel(phase)));
   block.append(grid);
 
-  return block;
-}
-
-function createTechnologySection(project) {
-  const block = createElement("section", "detail-block");
-  block.append(createElement("h2", null, "Technologies Used"));
-
-  const grid = createElement("div", "detail-panel-grid");
-  grid.append(createLoopPanel("Perception technologies", "", project.loop.perception.used));
-  grid.append(createLoopPanel("Agent Core / processing technologies", "", project.loop.agentCore.used));
-  grid.append(createLoopPanel("Action / output technologies", "", project.loop.action.used));
-  grid.append(createLoopPanel("Safety / constraint technologies", "", project.loop.safety.used));
-  block.append(grid);
-
-  return block;
-}
-
-function createContributionSection(project) {
-  const block = createElement("section", "detail-block");
-  block.append(createElement("h2", null, "My Contribution"));
-  block.append(createBulletList(project.contribution));
   return block;
 }
 
@@ -135,11 +114,10 @@ function createLinksSection(project) {
   block.append(createElement("h2", null, "Links"));
 
   const actions = createElement("div", "detail-actions");
-  project.buttons.forEach((button) => actions.append(createButton(button)));
-
   const backLink = createElement("a", "detail-button primary", "Back to Portfolio");
   backLink.href = "../index.html#portfolio";
   actions.append(backLink);
+  project.buttons.forEach((button) => actions.append(createButton(button)));
 
   block.append(actions);
   return block;
@@ -203,8 +181,7 @@ function renderProjectPage(project) {
     createTextBlock("Problem", project.problem),
     createTextBlock("Current System State", project.currentSystemState),
     createAgentLoop(project),
-    createTechnologySection(project),
-    createContributionSection(project),
+    createTextBlock("System State Change", project.systemStateChange),
     createTextBlock("Evidence / Outcome", project.evidence),
     createTextBlock("Limitations", project.limitations),
     createTextBlock("Next Steps", project.nextSteps),
