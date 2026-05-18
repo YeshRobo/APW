@@ -2,7 +2,7 @@
 
 This is a GitHub Pages-ready static website for Yeshwanth Reddy Gurredy's technical portfolio and philosophy project about agents as engineered systems.
 
-The core idea is simple: an agent perceives the current state of matter, processes it inside an Agent Core, and acts to create a new state of matter.
+The core idea is simple: an agent perceives the current state of a system, processes that perception inside an Agent Core, and acts to create a changed system state.
 
 The site uses plain HTML, CSS, and JavaScript. There is no React setup, no build step, and no package manager required.
 
@@ -11,16 +11,16 @@ The site uses plain HTML, CSS, and JavaScript. There is no React setup, no build
 The website is built around this framework:
 
 ```text
-Current State of Matter
+Current System State
 -> Perception
 -> Agent Core
 -> Action
--> New State of Matter
+-> Changed System State
 ```
 
 The Agent Core is the internal space where perception becomes representation, representation becomes thinking, and thinking becomes action.
 
-Agents transform the state of matter. Motion, documents, tools, machines, bodies, and cities are states or arrangements of matter.
+Agents change systems from one state to another. A system can be physical, digital, biological, or organizational.
 
 ## Page Structure
 
@@ -48,7 +48,7 @@ Each project object uses this structure:
   title: "Project Title",
   agentType: "Agent Type",
   problem: "...",
-  stateToChange: "...",
+  currentSystemState: "...",
   perceptionNeeds: "...",
   perceptionTools: ["..."],
   perceptionContribution: ["..."],
@@ -60,7 +60,7 @@ Each project object uses this structure:
   actionContribution: ["..."],
   safetyNeeds: "...",
   safetyImplementation: ["..."],
-  matterStateTransformation: "...",
+  systemStateChange: "...",
   evidenceOutcome: "...",
   links: {
     code: "",
@@ -76,12 +76,12 @@ The renderer in `js/renderProjects.js` displays each project as:
 Project Title — Agent Type
 
 Problem
-State to Change
+Current System State
 Perception: what it needs, what was used, my contribution
 Agent Core: what it needs, what was used, my contribution
 Action: what it needs, what was used, my contribution
 Safety / Constraints
-Matter-State Transformation
+System State Change
 Evidence / Outcome
 Links
 ```
@@ -100,7 +100,7 @@ Use this map when you want to change the website:
 | Hero title, subtitle, intro, buttons | `data/siteContent.js` | `hero` |
 | Core philosophy text and equation | `data/siteContent.js` | `philosophy` |
 | Spectrum of Agents | `data/siteContent.js` | `spectrum` |
-| Matter State / Perception / Agent Core / Action cards | `data/siteContent.js` | `framework` |
+| Current System State / Perception / Agent Core / Action cards | `data/siteContent.js` | `framework` |
 | Agent Systems Portfolio heading, guide card, and skills | `data/siteContent.js` | `portfolio` |
 | Project cards and agent-loop fields | `data/projects.js` | project objects |
 | About section | `data/siteContent.js` | `about` |
@@ -154,7 +154,7 @@ GitHub Pages will publish the site using `index.html` as the entry file.
 ## Files Included
 
 - `index.html` - Page skeleton and static fallback content.
-- `data/siteContent.js` - Editable website content for hero, philosophy, spectrum, framework, portfolio evidence, about, contact, and footer sections.
+- `data/siteContent.js` - Editable website content for hero, philosophy, spectrum, framework, portfolio guide, skills, about, contact, and footer sections.
 - `data/projects.js` - Editable project data for the modular Agent Systems Portfolio cards.
 - `js/main.js` - App entry point for navigation, canvas, current year, and data rendering.
 - `js/renderSiteContent.js` - Fills the page using `data/siteContent.js`.

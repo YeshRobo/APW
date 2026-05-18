@@ -10,8 +10,8 @@ export const projects = [
     agentType: "Control Agent",
     problem:
       "How can a camera remain stable while the UAV body is moving, vibrating, or rotating?",
-    stateToChange:
-      "The camera orientation is disturbed by UAV body motion, vibration, and rotation.",
+    currentSystemState:
+      "The camera/gimbal orientation is unstable because the UAV body is moving, vibrating, or rotating.",
     perceptionNeeds:
       "The gimbal needs to perceive camera orientation, body motion, angular disturbance, and position error.",
     perceptionTools: [
@@ -64,8 +64,8 @@ export const projects = [
       "Current limits",
       "Safety behavior logic",
     ],
-    matterStateTransformation:
-      "The system changes the camera state from unstable motion to stabilized alignment.",
+    systemStateChange:
+      "Unstable camera orientation -> stabilized camera alignment.",
     evidenceOutcome:
       "Worked on architecture, integration flow, embedded motor control, safety behavior, and tuning workflow for a compact 2-axis UAV EO gimbal.",
     links: {
@@ -80,8 +80,8 @@ export const projects = [
     agentType: "Human-Machine Agent",
     problem:
       "How can a wearable machine support human movement while staying connected to the user's body and intention?",
-    stateToChange:
-      "The human limb and wearable machine begin in a state where movement requires effort, support, or correction.",
+    currentSystemState:
+      "The human limb and wearable machine begin in a movement condition that requires support, assistance, or correction.",
     perceptionNeeds:
       "The system needs to perceive human-machine interaction, user movement, muscle activity, joint motion, and interaction forces.",
     perceptionTools: [
@@ -135,8 +135,8 @@ export const projects = [
       "Monitoring",
       "Safety-aware control concepts such as CBF where applicable",
     ],
-    matterStateTransformation:
-      "The system changes the state of human-machine movement by converting human intention and machine assistance into supported physical motion.",
+    systemStateChange:
+      "Unsupported or high-effort movement -> assisted human-machine movement.",
     evidenceOutcome:
       "Ran 10 human-subject sessions and logged synchronized kinematics, EMG, and interaction torque data for model-vs-baseline analysis.",
     links: {
@@ -151,7 +151,7 @@ export const projects = [
     agentType: "Enterprise Monitoring Agent",
     problem:
       "How can a retail system combine footfall counts and POS data to help stores understand traffic, conversion, and operational performance?",
-    stateToChange:
+    currentSystemState:
       "Retail sites begin with raw people-counting records, POS records, asset status, and site-level data that must be organized into useful analysis.",
     perceptionNeeds:
       "The system needs to perceive footfall counts, POS data relationships, time-series records, site context, asset status, user workflows, access rules, and dashboard refresh behavior.",
@@ -207,8 +207,8 @@ export const projects = [
       "Dashboard validation",
       "Troubleshooting across dev, test, and prod",
     ],
-    matterStateTransformation:
-      "The system changes raw footfall, POS-related, and asset records into reusable, access-controlled retail analytics dashboards and operational views.",
+    systemStateChange:
+      "Raw footfall, POS-related, and asset records -> reusable, access-controlled retail analytics dashboards and operational views.",
     evidenceOutcome:
       "Migrated the existing retail people-counting analytics system end-to-end into PTC ThingWorx, integrated SQL time-series data for footfall/POS-style analysis across about 10 sites and 70 assets, and built reusable services, dashboards, and access controls.",
     links: {
@@ -223,7 +223,7 @@ export const projects = [
     agentType: "Information Agent",
     problem:
       "How can scattered documents be converted into a useful, organized document system?",
-    stateToChange:
+    currentSystemState:
       "Documents begin as scattered files with disconnected structure and limited usability.",
     perceptionNeeds:
       "The system needs to perceive document content, headings, sections, file structure, relationships between ideas, and user information needs.",
@@ -278,8 +278,8 @@ export const projects = [
       "Controlled rewriting",
       "Clear separation between source text and generated summaries",
     ],
-    matterStateTransformation:
-      "The system changes the state of documents from scattered files into an organized, searchable document system.",
+    systemStateChange:
+      "Scattered documents -> organized, searchable document system.",
     evidenceOutcome:
       "Currently building a Python-based document agent for Markdown files that organizes scattered documents into searchable and useful structures.",
     links: {
@@ -294,8 +294,8 @@ export const projects = [
     agentType: "Adaptive Decision Agent",
     problem:
       "How can a car-like robot reach a target while avoiding obstacles and respecting safety constraints during learned navigation?",
-    stateToChange:
-      "The simulated ground vehicle begins at an initial state in an environment containing a goal, static obstacles, and moving agents.",
+    currentSystemState:
+      "The simulated ground vehicle begins at an initial pose in an environment containing a goal, static obstacles, and moving agents.",
     perceptionNeeds:
       "The agent needs to perceive vehicle state, goal position, obstacle distance, moving-agent context, valid control choices, and unsafe regions.",
     perceptionTools: [
@@ -348,8 +348,8 @@ export const projects = [
       "Safety pre-training duration study",
       "Policy gradient restriction study",
     ],
-    matterStateTransformation:
-      "The system changes the state of the simulated vehicle from an initial pose to a goal-reaching trajectory while avoiding unsafe obstacle states.",
+    systemStateChange:
+      "Initial vehicle pose -> goal-reaching trajectory while avoiding unsafe obstacle states.",
     evidenceOutcome:
       "Implemented a Certificated Actor-Critic safe reinforcement learning framework with a CBF-based safety critic, kinematic bicycle-model environment, Ackermann steering, LiDAR-style sensing, baseline comparison, and safety ablations.",
     links: {

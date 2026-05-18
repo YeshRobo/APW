@@ -149,7 +149,7 @@ function renderPhilosophyCopy() {
   const result = createElement("strong", null, siteContent.philosophy.equation.result);
 
   equation.replaceChildren(...equationParts, result);
-  container.replaceChildren(...paragraphs, equation);
+  container.replaceChildren(...paragraphs.slice(0, 4), equation, ...paragraphs.slice(4));
 }
 
 function renderFrameworkCards() {

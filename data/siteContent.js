@@ -6,7 +6,7 @@ export const siteContent = {
   meta: {
     title: "Yeshwanth Reddy Gurredy | Agent Systems Portfolio",
     description:
-      "Yeshwanth Reddy Gurredy's technical portfolio about robotics, embedded controls, human-machine systems, and agents that transform the state of matter.",
+      "Yeshwanth Reddy Gurredy's technical portfolio about robotics, embedded controls, human-machine systems, and agents that change systems from one state to another.",
   },
 
   // Header brand shown at the top left.
@@ -32,11 +32,11 @@ export const siteContent = {
     title: "Agents at Every Level of Intelligence",
     subtitle: "Perceive. Process. Act. Transform.",
     intro:
-      "An agent perceives the current state of matter, processes it inside an Agent Core, and acts to create a new state of matter.",
+      "An agent perceives the current state of a system, processes it inside an Agent Core, and acts to create a changed system state.",
     highlights: [
       "UAV gimbal controls",
       "Human-exoskeleton research",
-      "People-counting analytics system",
+      "Safe Robot Navigation",
     ],
     actions: [
       { label: "View Portfolio", href: "#portfolio", style: "primary" },
@@ -46,19 +46,20 @@ export const siteContent = {
 
   // CORE PHILOSOPHY SECTION.
   philosophy: {
-    kicker: "Core Philosophy",
-    title: "Agents are systems, not just chatbots.",
+    kicker: "CORE PHILOSOPHY",
+    title: "Agency is a loop: perceive, process, act.",
     paragraphs: [
-      "Agents are not only AI systems. Humans, robots, control systems, software systems, organizations, and civilizations can all be viewed as agents.",
-      "An agent perceives the current state of matter, processes that perception inside an Agent Core, and acts to create a new state of matter.",
-      "The difference between agents is the depth of perception, complexity of the Agent Core, and range of action.",
-      "Agents transform matter by changing its state or arrangement. Motion, documents, tools, machines, bodies, and cities are states or arrangements of matter.",
-      "The Agent Core can take different forms: a human mind, a control algorithm, a learned policy, a retrieval and reasoning system, or an organization's people, rules, plans, communication, and decision structure.",
+      "An agent is anything that can perceive the current state of its environment, process that perception, and act to change a system.",
+      "Agents exist at many levels of intelligence. A control system, robot, software system, human, or organization can all be viewed as an agent when it senses conditions, processes information, and acts on the world.",
+      "The difference between agents is not whether they are agents or not. The difference is how deeply they perceive, how complex their internal processing is, and how much they can affect through action.",
+      "In this framework, every agent operates through the same loop:",
+      "The Agent Core is the decision-making center of the agent. It receives perception, forms an internal representation of the current system state, and selects or produces the next action.",
+      "In different agents, the Agent Core takes different forms: a control algorithm in a gimbal, a learned policy in a navigation agent, a retrieval system in a library agent, the mind in a human, or the decision structure of an organization.",
     ],
     equation: {
       label: "Core framework",
-      parts: ["Current State of Matter", "\\u2192", "Perception", "\\u2192", "Agent Core", "\\u2192", "Action", "\\u2192"],
-      result: "New State of Matter",
+      parts: ["Current System State", "\\u2192", "Perception", "\\u2192", "Agent Core", "\\u2192", "Action", "\\u2192"],
+      result: "Changed System State",
     },
   },
 
@@ -73,40 +74,47 @@ export const siteContent = {
       "AI Agent",
       "Human",
       "Organization",
-      "Civilization",
     ],
   },
 
   // AGENT FRAMEWORK SECTION.
   framework: {
-    kicker: "Agent Framework",
-    title: "Current State of Matter to New State of Matter.",
+    kicker: "Agent Loop",
+    title: "Agent Framework",
+    subtitle:
+      "Current System State → Perception → Agent Core → Action → Changed System State",
     intro:
-      "The Agent Core is the internal space where perception becomes representation, representation becomes thinking, and thinking becomes action.",
+      "This framework describes how an agent changes a system from one state to another. The agent first perceives the current system state, processes that perception inside an Agent Core, and then acts to create a changed system state.",
     cards: [
       {
         index: "01",
-        title: "Matter State",
+        title: "Current System State",
         description:
-          "The current physical or symbolic arrangement the agent must understand or change.",
+          "The condition, position, structure, or arrangement of the system before the agent acts.",
       },
       {
         index: "02",
         title: "Perception",
         description:
-          "The process of sensing, reading, measuring, or receiving signals from the current state.",
+          "The process of sensing, reading, measuring, or receiving signals from the current system state.",
       },
       {
         index: "03",
         title: "Agent Core",
         description:
-          "The internal system where perception becomes representation, representation becomes thinking, and thinking becomes action.",
+          "The decision-making center of the agent. It turns perception into representation, evaluates what action is needed, and selects or produces the next action.",
       },
       {
         index: "04",
         title: "Action",
         description:
-          "The output that changes the state of matter through force, control, code, organization, or structured behavior.",
+          "The output that changes the system state through force, control, code, organization, or structured behavior.",
+      },
+      {
+        index: "05",
+        title: "Changed System State",
+        description:
+          "The new condition, position, structure, or arrangement created after the agent acts.",
       },
     ],
   },
@@ -116,17 +124,17 @@ export const siteContent = {
     kicker: "Engineering Work",
     title: "Agent Systems Portfolio",
     intro:
-      "Each project is explained through the agent loop: Perception, Agent Core, Action, Safety / Constraints, and Matter-State Transformation.",
+      "Each project is explained through the agent loop: Perception, Agent Core, Action, Safety / Constraints, and System State Change.",
     guide: {
       title: "How to Read These Projects",
       body:
-        "Each project is shown as an agent system. The card starts with the current matter state, then shows how the system perceives that state, processes it inside an Agent Core, acts on the system, and creates a new matter state. Evidence / Outcome shows what I actually built, tested, measured, simulated, or analyzed.",
+        "Each project is shown as an agent system. The card starts with the current system state, then shows what the system needs to perceive, how the Agent Core processes that perception, how the system acts, and what system state change is created. Evidence / Outcome shows what I actually built, tested, measured, simulated, logged, implemented, integrated, or analyzed.",
       flow: [
-        "Current Matter State",
+        "Current System State",
         "Perception",
         "Agent Core",
         "Action",
-        "New Matter State",
+        "Changed System State",
       ],
     },
     noscript:
@@ -150,7 +158,7 @@ export const siteContent = {
     title: "Robotics, embedded control, AI systems, and information organization.",
     paragraphs: [
       "I am a robotics and embedded controls engineer pursuing an M.S. in Robotics and Autonomous Systems at Arizona State University. My work focuses on UAV gimbals, embedded motor control, human-exoskeleton interaction, safe control, and information organization.",
-      "I am interested in how agents can be designed, connected, and organized to transform matter states across hardware, software, and human-machine systems.",
+      "I am interested in how agents can be designed, connected, and organized to change system states across hardware, software, and human-machine systems.",
     ],
   },
 

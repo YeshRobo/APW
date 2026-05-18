@@ -145,9 +145,9 @@ function createProjectCard(project) {
 
   card.append(header);
   card.append(createProjectSection("Problem", project.problem));
-  card.append(createProjectSection("State to Change", project.stateToChange));
+  card.append(createProjectSection("Current System State", project.currentSystemState));
   card.append(createProjectLoop(project));
-  card.append(createProjectSection("Matter-State Transformation", project.matterStateTransformation));
+  card.append(createProjectSection("System State Change", project.systemStateChange));
   card.append(createProjectSection("Evidence / Outcome", project.evidenceOutcome));
   card.append(createProjectSection("Links", createProjectLinks(project.links)));
 
