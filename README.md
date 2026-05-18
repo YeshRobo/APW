@@ -1,14 +1,14 @@
 # Agents at Every Level of Intelligence
 
-This is a GitHub Pages-ready static website for Yeshwanth Reddy Gurredy's personal portfolio and philosophy project about agents as engineered systems.
+This is a GitHub Pages-ready static website for Yeshwanth Reddy Gurredy's technical portfolio and philosophy project about agents as engineered systems.
 
-The core idea is that agents exist at every intelligence level. An agent is any system that perceives the current state of matter, processes it inside an Agent Core, and acts to create a new state of matter.
+The core idea is simple: an agent perceives the current state of matter, processes it inside an Agent Core, and acts to create a new state of matter.
 
-The site presents that idea as a professional engineering framework and connects it to UAV gimbals, embedded controls, human-exoskeleton research, ThingWorx information systems, information agents, and adaptive decision agents.
+The site uses plain HTML, CSS, and JavaScript. There is no React setup, no build step, and no package manager required.
 
 ## Agent Core Framework
 
-The website uses this main framework:
+The website is built around this framework:
 
 ```text
 Current State of Matter
@@ -20,21 +20,70 @@ Current State of Matter
 
 The Agent Core is the internal space where perception becomes representation, representation becomes thinking, and thinking becomes action.
 
-The Agent Core can take different forms:
+Agents transform the state of matter. Motion, documents, tools, machines, bodies, and cities are states or arrangements of matter.
 
-- Human: mind
-- UAV gimbal: control algorithm
-- RL car: learned policy, Q-table, or decision model
-- Library agent: retrieval, organization, and reasoning system
-- Organization: people, rules, plans, communication, and decision structure
+## Page Structure
 
-The site avoids describing agents as transforming motion or knowledge separately. The correct framing is that agents transform the state of matter.
+The full page order is:
 
-## Project System
+1. Hero
+2. Core Philosophy
+3. Spectrum of Agents
+4. Agent Framework
+5. Agent Systems Portfolio
+6. About
+7. Contact
 
-Projects are data-driven. To add, remove, or edit projects, update `data/projects.js` instead of rewriting the HTML.
+The Agent Systems Portfolio section contains detailed project cards and a skills strip. Concrete evidence belongs inside each project's Evidence / Outcome field.
 
-Most non-project website text is also data-driven. To edit section headings, hero text, contact links, skills, framework cards, experience cards, and the agent spectrum, update `data/siteContent.js`.
+## Project Data
+
+Projects are data-driven. To add, remove, or edit project cards, update `data/projects.js` instead of writing project markup in `index.html`.
+
+Each project object uses this structure:
+
+```js
+{
+  id: "project-id",
+  title: "Project Title",
+  agentType: "Agent Type",
+  problem: "...",
+  stateToChange: "...",
+  perceptionNeeds: "...",
+  perceptionTools: ["..."],
+  agentCoreNeeds: "...",
+  agentCoreImplementation: ["..."],
+  actionNeeds: "...",
+  actionTools: ["..."],
+  safetyNeeds: "...",
+  safetyImplementation: ["..."],
+  matterStateTransformation: "...",
+  evidenceOutcome: "...",
+  links: {
+    code: "",
+    details: "",
+    demo: ""
+  }
+}
+```
+
+The renderer in `js/renderProjects.js` displays each project as:
+
+```text
+Project Title — Agent Type
+
+Problem
+State to Change
+Perception
+Agent Core
+Action
+Safety / Constraints
+Matter-State Transformation
+Evidence / Outcome
+Links
+```
+
+Leave a link value empty when the link is not ready. The card will show that link as Coming Soon.
 
 ## Editing Map
 
@@ -47,71 +96,34 @@ Use this map when you want to change the website:
 | Navigation links | `data/siteContent.js` | `navigation` |
 | Hero title, subtitle, intro, buttons | `data/siteContent.js` | `hero` |
 | Core philosophy text and equation | `data/siteContent.js` | `philosophy` |
-| Matter State / Perception / Agent Core / Action framework cards | `data/siteContent.js` | `framework` |
-| Projects section heading | `data/siteContent.js` | `projectsSection` |
-| Project cards, Agent Core, and matter-state details | `data/projects.js` | project objects |
-| Experience evidence cards | `data/siteContent.js` | `experience.cards` |
-| Skills strip | `data/siteContent.js` | `experience.skills` |
-| Agent spectrum scale | `data/siteContent.js` | `spectrum` |
+| Spectrum of Agents | `data/siteContent.js` | `spectrum` |
+| Matter State / Perception / Agent Core / Action cards | `data/siteContent.js` | `framework` |
+| Agent Systems Portfolio heading and skills | `data/siteContent.js` | `portfolio` |
+| Project cards and agent-loop fields | `data/projects.js` | project objects |
 | About section | `data/siteContent.js` | `about` |
 | Contact links | `data/siteContent.js` | `contact.links` |
 | Footer owner/back-to-top text | `data/siteContent.js` | `footer` |
 | Colors | `css/base.css` | `:root` variables |
 | Page layout and grids | `css/layout.css` | section/grid classes |
-| Card/button/tab styling | `css/components.css` | component classes |
+| Card, button, and project styling | `css/components.css` | component classes |
 
-The HTML in `index.html` is now mostly the page skeleton. The visible content is filled by `js/renderSiteContent.js` and `js/renderProjects.js` from the files in `data/`.
+Most visible content is filled by `js/renderSiteContent.js` and `js/renderProjects.js` from the files in `data/`.
 
-Each project follows this structure:
-
-```text
-Title - Agent Type
-
-Problem:
-Built System:
-Technologies:
-Agent Core:
-Matter-State Transformation:
-Agent Interpretation:
-Links:
-```
-
-Each object in `data/projects.js` includes:
-
-```js
-{
-  id: "project-id",
-  title: "Project Title",
-  agentType: "Agent Type",
-  problem: "...",
-  builtSystem: "...",
-  technologies: ["..."],
-  agentCore: "...",
-  matterStateTransformation: "...",
-  agentInterpretation: "...",
-  links: {
-    code: "#",
-    details: "#",
-    demo: "#"
-  }
-}
-```
-
-To add a new project:
+## Add a New Project
 
 1. Open `data/projects.js`.
 2. Copy one existing project object.
-3. Change the `id`, `title`, `agentType`, and text fields.
-4. List the technologies in the `technologies` array.
-5. Describe the project-specific Agent Core in `agentCore`.
-6. Describe the before-to-after matter-state change in `matterStateTransformation`.
-7. Update the `links` values when code, details, or demos are available.
+3. Paste it inside the `projects` array.
+4. Change `id`, `title`, and `agentType`.
+5. Update every agent-loop field.
+6. Keep `evidenceOutcome` short and concrete.
+7. Add real URLs in `links` when code, details, or demos are ready.
 
-## Local Preview
+## Run Locally
 
 Because this project uses JavaScript ES modules, preview it with a local server. Opening `index.html` directly may block module imports in some browsers.
 
-For a local server, run one of these commands from the project folder:
+From the project folder, run:
 
 ```bash
 python3 -m http.server 8000
@@ -123,38 +135,27 @@ Then open:
 http://localhost:8000
 ```
 
-If you use VS Code, you can also preview the site with any static file server extension.
+## Deploy on GitHub Pages
 
-## Deploy With GitHub Pages
-
-1. Create a GitHub repository for the portfolio.
-2. Add these files to the repository root.
-3. Commit and push the files to GitHub.
-4. Open the repository on GitHub.
-5. Go to **Settings** > **Pages**.
-6. Under **Build and deployment**, choose **Deploy from a branch**.
-7. Select the branch you want to publish, usually `main`.
-8. Select the root folder, usually `/`, then save.
+1. Push the repository to GitHub.
+2. Open the repository on GitHub.
+3. Go to Settings > Pages.
+4. Under Build and deployment, choose Deploy from a branch.
+5. Select the branch to publish, usually `main`.
+6. Select the root folder `/`.
+7. Save the settings.
 
 GitHub Pages will publish the site using `index.html` as the entry file.
 
 ## Files Included
 
-- `index.html` - Main website structure, static sections, and the project container rendered by JavaScript.
-- `data/siteContent.js` - Editable website content for hero, philosophy, framework, experience, spectrum, about, contact, and footer sections.
-- `data/projects.js` - Editable project data for the modular project card system.
-- `js/main.js` - App entry point for navigation, canvas, current year, and project rendering.
-- `js/renderSiteContent.js` - Fills the HTML sections using `data/siteContent.js`.
+- `index.html` - Page skeleton and static fallback content.
+- `data/siteContent.js` - Editable website content for hero, philosophy, spectrum, framework, portfolio evidence, about, contact, and footer sections.
+- `data/projects.js` - Editable project data for the modular Agent Systems Portfolio cards.
+- `js/main.js` - App entry point for navigation, canvas, current year, and data rendering.
+- `js/renderSiteContent.js` - Fills the page using `data/siteContent.js`.
 - `js/renderProjects.js` - Builds project cards from `data/projects.js`.
 - `css/base.css` - Variables, reset styles, typography defaults, and accessibility helpers.
 - `css/layout.css` - Page layout, responsive grids, sections, header, and footer.
 - `css/components.css` - Cards, buttons, tags, project sections, contact links, and other reusable components.
-- `README.md` - Project overview, local preview instructions, and deployment steps.
-- `assets/` - Placeholder folder for future files such as a resume PDF or images.
-
-## Customization Notes
-
-- Update the LinkedIn link in `data/siteContent.js` before publishing widely.
-- Add `assets/resume.pdf` if you want the resume link to work.
-- Edit project entries in `data/projects.js` as your UAV gimbal, exoskeleton, library agent, and RL navigation work evolves.
-- Adjust colors in `css/base.css`, layout rules in `css/layout.css`, and card/button styles in `css/components.css`.
+- `assets/` - Optional static assets.

@@ -1,5 +1,5 @@
 // EDIT THIS FILE for website text, links, section headings, skills, and non-project cards.
-// EDIT data/projects.js for project cards and Agent Core / matter-state transformation details.
+// EDIT data/projects.js for project cards and agent-loop details.
 
 export const siteContent = {
   // Browser tab title and search/share description.
@@ -19,10 +19,9 @@ export const siteContent = {
   // Header navigation. Add or remove links here if you add/remove sections.
   navigation: [
     { label: "Philosophy", href: "#philosophy" },
-    { label: "Framework", href: "#framework" },
-    { label: "Projects", href: "#projects" },
-    { label: "Experience", href: "#experience" },
     { label: "Spectrum", href: "#spectrum" },
+    { label: "Framework", href: "#framework" },
+    { label: "Portfolio", href: "#portfolio" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ],
@@ -37,11 +36,11 @@ export const siteContent = {
     highlights: [
       "UAV gimbal controls",
       "Human-exoskeleton research",
-      "Embedded C / Python / SQL",
+      "People-counting analytics system",
     ],
     actions: [
-      { label: "View Projects", href: "#projects", style: "primary" },
-      { label: "View Experience", href: "#experience", style: "secondary" },
+      { label: "View Portfolio", href: "#portfolio", style: "primary" },
+      { label: "View Framework", href: "#framework", style: "secondary" },
     ],
   },
 
@@ -53,14 +52,29 @@ export const siteContent = {
       "Agents are not only AI systems. Humans, robots, control systems, software systems, organizations, and civilizations can all be viewed as agents.",
       "An agent perceives the current state of matter, processes that perception inside an Agent Core, and acts to create a new state of matter.",
       "The difference between agents is the depth of perception, complexity of the Agent Core, and range of action.",
-      "Agents transform matter by changing its state or arrangement. Documents, machines, bodies, vehicles, tools, and cities are all matter in different states and arrangements.",
+      "Agents transform matter by changing its state or arrangement. Motion, documents, tools, machines, bodies, and cities are states or arrangements of matter.",
       "The Agent Core can take different forms: a human mind, a control algorithm, a learned policy, a retrieval and reasoning system, or an organization's people, rules, plans, communication, and decision structure.",
     ],
     equation: {
-      label: "Core equation",
-      parts: ["Matter State", "+", "Perception", "+", "Agent Core", "+", "Action", "\\u2192"],
-      result: "New Matter State",
+      label: "Core framework",
+      parts: ["Current State of Matter", "\\u2192", "Perception", "\\u2192", "Agent Core", "\\u2192", "Action", "\\u2192"],
+      result: "New State of Matter",
     },
+  },
+
+  // SPECTRUM SECTION.
+  spectrum: {
+    kicker: "Spectrum of Agents",
+    title: "Agency scales with perception, Agent Core complexity, and action range.",
+    items: [
+      "Thermostat",
+      "UAV Gimbal",
+      "Robot",
+      "AI Agent",
+      "Human",
+      "Organization",
+      "Civilization",
+    ],
   },
 
   // AGENT FRAMEWORK SECTION.
@@ -97,72 +111,24 @@ export const siteContent = {
     ],
   },
 
-  // PROJECTS SECTION HEADING. Project cards live in data/projects.js.
-  projectsSection: {
-    kicker: "Engineering Projects",
-    title: "Projects as Agents",
+  // AGENT SYSTEMS PORTFOLIO SECTION. Project cards live in data/projects.js.
+  portfolio: {
+    kicker: "Engineering Work",
+    title: "Agent Systems Portfolio",
     intro:
-      "Each project shows how an agent perceives a matter state, processes it through an Agent Core, and acts to create a new matter state.",
+      "Each project is explained through the agent loop: Perception, Agent Core, Action, Safety / Constraints, and Matter-State Transformation.",
     noscript:
       "Project cards require JavaScript. Use a local server or GitHub Pages to preview the modular site.",
-  },
-
-  // EXPERIENCE EVIDENCE SECTION.
-  experience: {
-    kicker: "Experience Evidence",
-    title: "Systems work behind the framework.",
-    intro:
-      "The framework is grounded in hardware bring-up, embedded firmware, experimental robotics, and deployed information systems.",
-    cards: [
-      {
-        value: "2-axis",
-        title: "Stabilized UAV EO gimbal",
-        description:
-          "Designed architecture, integration flow, motor control, safety behavior, and tuning workflow for a compact stabilized payload.",
-      },
-      {
-        value: "10 subjects",
-        title: "Shoulder exoskeleton study",
-        description:
-          "Ran human-subject sessions and logged synchronized kinematics, EMG, and interaction torque for model-vs-baseline analysis.",
-      },
-      {
-        value: "~70 assets",
-        title: "ThingWorx monitoring system",
-        description:
-          "Migrated a legacy retail monitoring application into reusable ThingWorx services, SQL queries, dashboards, and access controls.",
-      },
-      {
-        value: "MS RAS",
-        title: "Robotics research foundation",
-        description:
-          "Building depth across control, safe reinforcement learning, visual odometry, MuJoCo simulation, and ROS-based robotics workflows.",
-      },
-    ],
     skills: [
       "Embedded C",
       "Python",
       "SQL",
+      "PTC ThingWorx",
       "SVPWM / FOC",
       "ROS / ROS2",
       "MATLAB / Simulink",
       "MuJoCo",
       "Docker",
-    ],
-  },
-
-  // SPECTRUM SECTION.
-  spectrum: {
-    kicker: "Spectrum of Agents",
-    title: "Agency scales with perception, Agent Core complexity, and action range.",
-    items: [
-      "Thermostat",
-      "UAV Gimbal",
-      "Robot",
-      "AI Agent",
-      "Human",
-      "Organization",
-      "Civilization",
     ],
   },
 
@@ -176,16 +142,14 @@ export const siteContent = {
     ],
   },
 
-  // CONTACT SECTION. Replace placeholder LinkedIn/resume links here.
+  // CONTACT SECTION.
   contact: {
     kicker: "Contact",
     title: "Connect and review my work.",
     intro:
-      "GitHub and email are ready. Add your LinkedIn URL and resume PDF when you want those links to go live.",
+      "I am open to robotics, embedded controls, and agent systems conversations.",
     links: [
       { label: "GitHub", href: "https://github.com/YeshRobo", external: true },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/your-profile", external: true },
-      { label: "Resume", href: "assets/resume.pdf", external: false },
       { label: "Email", href: "mailto:yeshwanth.rg060694@gmail.com", external: false },
     ],
   },

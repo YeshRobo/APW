@@ -17,21 +17,78 @@ function createElement(tagName, className, textContent) {
   return element;
 }
 
-function createTechnologyTags(technologies) {
-  const techList = createElement("div", "tech-list");
+function createTagList(items) {
+  const tagList = createElement("div", "tech-list");
 
-  technologies.forEach((technology) => {
-    techList.append(createElement("span", "tech-tag", technology));
+  items.forEach((item) => {
+    tagList.append(createElement("span", "tech-tag", item));
   });
 
-  return techList;
+  return tagList;
 }
 
-function createProjectSection(title, bodyElement) {
+function createValueElement(value) {
+  if (Array.isArray(value)) {
+    return createTagList(value);
+  }
+
+  return createElement("p", null, value);
+}
+
+function createProjectSection(title, value) {
   const section = createElement("div", "project-section");
   section.append(createElement("h4", null, title));
-  section.append(bodyElement);
+  section.append(value instanceof Node ? value : createValueElement(value));
   return section;
+}
+
+function createProjectDetail(label, value) {
+  const detail = createElement("div", "project-detail");
+  detail.append(createElement("p", "project-detail-label", label));
+  detail.append(createValueElement(value));
+  return detail;
+}
+
+function createProjectPhase(title, details) {
+  const phase = createElement("section", "project-phase");
+  phase.append(createElement("h4", null, title));
+
+  details.forEach((detail) => {
+    phase.append(createProjectDetail(detail.label, detail.value));
+  });
+
+  return phase;
+}
+
+function createProjectLoop(project) {
+  const loop = createElement("div", "project-loop");
+
+  loop.append(
+    createProjectPhase("Perception", [
+      { label: "What it needs to perceive", value: project.perceptionNeeds },
+      { label: "What I used to perceive it", value: project.perceptionTools },
+    ])
+  );
+  loop.append(
+    createProjectPhase("Agent Core", [
+      { label: "What it needs to do", value: project.agentCoreNeeds },
+      { label: "How I achieved it", value: project.agentCoreImplementation },
+    ])
+  );
+  loop.append(
+    createProjectPhase("Action", [
+      { label: "What it needs to change", value: project.actionNeeds },
+      { label: "What I used to act", value: project.actionTools },
+    ])
+  );
+  loop.append(
+    createProjectPhase("Safety / Constraints", [
+      { label: "What must be prevented", value: project.safetyNeeds },
+      { label: "What I used to keep it safe", value: project.safetyImplementation },
+    ])
+  );
+
+  return loop;
 }
 
 function createProjectLinks(links) {
@@ -43,9 +100,24 @@ function createProjectLinks(links) {
   ];
 
   linkLabels.forEach(([key, label]) => {
-    const link = createElement("a", null, label);
-    link.href = links[key] || "#";
-    linkContainer.append(link);
+    const href = links?.[key];
+
+    if (href) {
+      const link = createElement("a", "project-link", label);
+      link.href = href;
+
+      if (href.startsWith("http")) {
+        link.target = "_blank";
+        link.rel = "noreferrer";
+      }
+
+      linkContainer.append(link);
+      return;
+    }
+
+    const disabledLink = createElement("span", "project-link is-disabled", `${label}: Coming Soon`);
+    disabledLink.setAttribute("aria-label", `${label} coming soon`);
+    linkContainer.append(disabledLink);
   });
 
   return linkContainer;
@@ -56,27 +128,15 @@ function createProjectCard(project) {
   card.id = project.id;
 
   const header = createElement("div", "project-card-header");
-  header.append(createElement("h3", null, project.title));
-  header.append(createElement("span", "agent-type", project.agentType));
+  header.append(createElement("h3", null, `${project.title} \u2014 ${project.agentType}`));
 
   card.append(header);
-  card.append(createProjectSection("Problem", createElement("p", null, project.problem)));
-  card.append(createProjectSection("Built System", createElement("p", null, project.builtSystem)));
-  card.append(createProjectSection("Technologies", createTechnologyTags(project.technologies)));
-  card.append(createProjectSection("Agent Core", createElement("p", null, project.agentCore)));
-  card.append(
-    createProjectSection(
-      "Matter-State Transformation",
-      createElement("p", null, project.matterStateTransformation)
-    )
-  );
-  card.append(
-    createProjectSection(
-      "Agent Interpretation",
-      createElement("p", null, project.agentInterpretation)
-    )
-  );
-  card.append(createProjectLinks(project.links));
+  card.append(createProjectSection("Problem", project.problem));
+  card.append(createProjectSection("State to Change", project.stateToChange));
+  card.append(createProjectLoop(project));
+  card.append(createProjectSection("Matter-State Transformation", project.matterStateTransformation));
+  card.append(createProjectSection("Evidence / Outcome", project.evidenceOutcome));
+  card.append(createProjectSection("Links", createProjectLinks(project.links)));
 
   return card;
 }

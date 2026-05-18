@@ -170,25 +170,7 @@ function renderFrameworkCards() {
   container.replaceChildren(...cards);
 }
 
-function renderExperienceCards() {
-  const container = document.querySelector("[data-experience-cards]");
-
-  if (!container) {
-    return;
-  }
-
-  const cards = siteContent.experience.cards.map((card) => {
-    const article = createElement("article", "evidence-card");
-    article.append(createElement("span", "evidence-value", card.value));
-    article.append(createElement("h3", null, card.title));
-    article.append(createElement("p", null, card.description));
-    return article;
-  });
-
-  container.replaceChildren(...cards);
-}
-
-function renderSkillList() {
+function renderPortfolioSkillList() {
   const container = document.querySelector("[data-skill-list]");
 
   if (!container) {
@@ -196,7 +178,7 @@ function renderSkillList() {
   }
 
   container.replaceChildren(
-    ...siteContent.experience.skills.map((skill) => createElement("span", null, skill))
+    ...siteContent.portfolio.skills.map((skill) => createElement("span", null, skill))
   );
 }
 
@@ -222,8 +204,7 @@ export async function renderSiteContent(version) {
   renderHeroActions();
   renderPhilosophyCopy();
   renderFrameworkCards();
-  renderExperienceCards();
-  renderSkillList();
+  renderPortfolioSkillList();
   renderSpectrumList();
   renderParagraphList("[data-about-copy]", siteContent.about.paragraphs);
   renderLinkList("[data-contact-links]", siteContent.contact.links);

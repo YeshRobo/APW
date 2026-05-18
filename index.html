@@ -12,7 +12,6 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- The header stays compact so the first screen feels like a portfolio, not a landing-page pitch. -->
   <header class="site-header" id="site-header">
     <nav class="nav-shell" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Yeshwanth Reddy Gurredy portfolio home" data-brand-link>
@@ -28,10 +27,9 @@
 
       <ul class="nav-links" id="primary-menu" data-navigation>
         <li><a href="#philosophy">Philosophy</a></li>
-        <li><a href="#framework">Framework</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
         <li><a href="#spectrum">Spectrum</a></li>
+        <li><a href="#framework">Framework</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -40,7 +38,6 @@
 
   <main id="main-content">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <!-- Canvas is drawn by js/main.js and gives the page a technical visual system without external assets. -->
       <canvas id="agent-canvas" aria-hidden="true"></canvas>
       <div class="hero-shade" aria-hidden="true"></div>
 
@@ -54,11 +51,11 @@
         <div class="hero-proof" aria-label="Portfolio highlights" data-hero-highlights>
           <span>UAV gimbal controls</span>
           <span>Human-exoskeleton research</span>
-          <span>Embedded C / Python / SQL</span>
+          <span>People-counting analytics system</span>
         </div>
         <div class="hero-actions" aria-label="Featured page links" data-hero-actions>
-          <a class="button primary" href="#projects">View Projects</a>
-          <a class="button secondary" href="#experience">View Experience</a>
+          <a class="button primary" href="#portfolio">View Portfolio</a>
+          <a class="button secondary" href="#framework">View Framework</a>
         </div>
       </div>
     </section>
@@ -80,23 +77,42 @@
             The difference between agents is the depth of perception, complexity of the Agent Core, and range of action.
           </p>
           <p>
-            Agents transform matter by changing its state or arrangement. Documents, machines, bodies, vehicles, tools, and cities are all matter in different states and arrangements.
+            Agents transform matter by changing its state or arrangement. Motion, documents, tools, machines, bodies, and cities are states or arrangements of matter.
           </p>
           <p>
             The Agent Core can take different forms: a human mind, a control algorithm, a learned policy, a retrieval and reasoning system, or an organization's people, rules, plans, communication, and decision structure.
           </p>
-          <div class="equation-panel" aria-label="Core equation">
-            <span>Matter State</span>
-            <span>+</span>
+          <div class="equation-panel" aria-label="Core framework">
+            <span>Current State of Matter</span>
+            <span>&rarr;</span>
             <span>Perception</span>
-            <span>+</span>
+            <span>&rarr;</span>
             <span>Agent Core</span>
-            <span>+</span>
+            <span>&rarr;</span>
             <span>Action</span>
             <span>&rarr;</span>
-            <strong>New Matter State</strong>
+            <strong>New State of Matter</strong>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section spectrum-section" id="spectrum" aria-labelledby="spectrum-title">
+      <div class="section-shell">
+        <div class="section-heading compact">
+          <p class="section-kicker" data-content="spectrum.kicker">Spectrum of Agents</p>
+          <h2 id="spectrum-title" data-content="spectrum.title">Agency scales with perception, Agent Core complexity, and action range.</h2>
+        </div>
+
+        <ol class="agent-scale" aria-label="Agent intelligence scale" data-spectrum-list>
+          <li>Thermostat</li>
+          <li>UAV Gimbal</li>
+          <li>Robot</li>
+          <li>AI Agent</li>
+          <li>Human</li>
+          <li>Organization</li>
+          <li>Civilization</li>
+        </ol>
       </div>
     </section>
 
@@ -135,86 +151,33 @@
       </div>
     </section>
 
-    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+    <section class="section portfolio-section" id="portfolio" aria-labelledby="portfolio-title">
       <div class="section-shell">
         <div class="section-heading">
-          <p class="section-kicker" data-content="projectsSection.kicker">Engineering Projects</p>
-          <h2 id="projects-title" data-content="projectsSection.title">Projects as Agents</h2>
-          <p data-content="projectsSection.intro">
-            Each project shows how an agent perceives a matter state, processes it through an Agent Core, and acts to create a new matter state.
+          <p class="section-kicker" data-content="portfolio.kicker">Engineering Work</p>
+          <h2 id="portfolio-title" data-content="portfolio.title">Agent Systems Portfolio</h2>
+          <p data-content="portfolio.intro">
+            Each project is explained through the agent loop: Perception, Agent Core, Action, Safety / Constraints, and Matter-State Transformation.
           </p>
         </div>
 
         <!-- Project cards are rendered from data/projects.js so new projects do not require HTML edits. -->
         <div class="card-grid project-grid" data-projects></div>
         <noscript>
-          <p class="noscript-note" data-content="projectsSection.noscript">Project cards require JavaScript. Use a local server or GitHub Pages to preview the modular site.</p>
+          <p class="noscript-note" data-content="portfolio.noscript">Project cards require JavaScript. Use a local server or GitHub Pages to preview the modular site.</p>
         </noscript>
-      </div>
-    </section>
-
-    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
-      <div class="section-shell">
-        <div class="section-heading">
-          <p class="section-kicker" data-content="experience.kicker">Experience Evidence</p>
-          <h2 id="experience-title" data-content="experience.title">Systems work behind the framework.</h2>
-          <p data-content="experience.intro">
-            The framework is grounded in hardware bring-up, embedded firmware, experimental robotics, and deployed information systems.
-          </p>
-        </div>
-
-        <div class="card-grid evidence-grid" data-experience-cards>
-          <article class="evidence-card">
-            <span class="evidence-value">2-axis</span>
-            <h3>Stabilized UAV EO gimbal</h3>
-            <p>Designed architecture, integration flow, motor control, safety behavior, and tuning workflow for a compact stabilized payload.</p>
-          </article>
-          <article class="evidence-card">
-            <span class="evidence-value">10 subjects</span>
-            <h3>Shoulder exoskeleton study</h3>
-            <p>Ran human-subject sessions and logged synchronized kinematics, EMG, and interaction torque for model-vs-baseline analysis.</p>
-          </article>
-          <article class="evidence-card">
-            <span class="evidence-value">~70 assets</span>
-            <h3>ThingWorx monitoring system</h3>
-            <p>Migrated a legacy retail monitoring application into reusable ThingWorx services, SQL queries, dashboards, and access controls.</p>
-          </article>
-          <article class="evidence-card">
-            <span class="evidence-value">MS RAS</span>
-            <h3>Robotics research foundation</h3>
-            <p>Building depth across control, safe reinforcement learning, visual odometry, MuJoCo simulation, and ROS-based robotics workflows.</p>
-          </article>
-        </div>
 
         <div class="skill-strip" aria-label="Core technical skills" data-skill-list>
           <span>Embedded C</span>
           <span>Python</span>
           <span>SQL</span>
+          <span>PTC ThingWorx</span>
           <span>SVPWM / FOC</span>
           <span>ROS / ROS2</span>
           <span>MATLAB / Simulink</span>
           <span>MuJoCo</span>
           <span>Docker</span>
         </div>
-      </div>
-    </section>
-
-    <section class="section spectrum-section" id="spectrum" aria-labelledby="spectrum-title">
-      <div class="section-shell">
-        <div class="section-heading compact">
-          <p class="section-kicker" data-content="spectrum.kicker">Spectrum of Agents</p>
-          <h2 id="spectrum-title" data-content="spectrum.title">Agency scales with perception, Agent Core complexity, and action range.</h2>
-        </div>
-
-        <ol class="agent-scale" aria-label="Agent intelligence scale" data-spectrum-list>
-          <li>Thermostat</li>
-          <li>UAV Gimbal</li>
-          <li>Robot</li>
-          <li>AI Agent</li>
-          <li>Human</li>
-          <li>Organization</li>
-          <li>Civilization</li>
-        </ol>
       </div>
     </section>
 
@@ -240,14 +203,11 @@
         <div>
           <p class="section-kicker" data-content="contact.kicker">Contact</p>
           <h2 id="contact-title" data-content="contact.title">Connect and review my work.</h2>
-          <p data-content="contact.intro">GitHub and email are ready. Add your LinkedIn URL and resume PDF when you want those links to go live.</p>
+          <p data-content="contact.intro">I am open to robotics, embedded controls, and agent systems conversations.</p>
         </div>
 
         <div class="contact-links" aria-label="Contact links" data-contact-links>
-          <!-- Update the LinkedIn URL and add assets/resume.pdf before publishing those links broadly. -->
           <a href="https://github.com/YeshRobo" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="assets/resume.pdf">Resume</a>
           <a href="mailto:yeshwanth.rg060694@gmail.com">Email</a>
         </div>
       </div>
@@ -261,6 +221,6 @@
     </div>
   </footer>
 
-  <script type="module" src="js/main.js?v=agent-core-1"></script>
+  <script type="module" src="js/main.js?v=agent-systems-1"></script>
 </body>
 </html>
