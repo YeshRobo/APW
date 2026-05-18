@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A deeper explanation of Yeshwanth Reddy Gurredy's Agent Core framework for robotics, AI, and systems engineering.">
+  <meta name="description" content="Yeshwanth Reddy Gurredy's philosophy of agents as systems that perceive, process, act, and transform state across controls, robotics, AI, humans, and organizations.">
   <title>Agent Core Philosophy | Yeshwanth Reddy Gurredy</title>
   <link rel="stylesheet" href="css/base.css?v=project-pages-1">
   <link rel="stylesheet" href="css/layout.css?v=project-pages-1">
@@ -38,62 +38,140 @@
   <main id="main-content">
     <section class="detail-hero" id="top" aria-labelledby="philosophy-title">
       <div class="section-shell detail-hero-shell">
-        <p class="section-kicker">Deeper Framework</p>
-        <h1 id="philosophy-title">What I Mean by Agent</h1>
-        <p class="detail-summary">A recruiter-friendly idea on the homepage, expanded here for robotics, AI, and systems engineering.</p>
+        <p class="section-kicker">Systems Philosophy</p>
+        <h1 id="philosophy-title">Agents Are Systems That Change Systems</h1>
+        <p class="detail-summary">AI agents are one modern form of a broader engineering pattern: systems that perceive, process, act, and transform state.</p>
         <div class="hero-actions">
           <a class="button primary" href="index.html#portfolio">View Portfolio</a>
-          <a class="button secondary" href="index.html#framework">View Framework</a>
+          <a class="button secondary" href="#agent-loop">View Agent Loop</a>
         </div>
       </div>
     </section>
 
     <section class="section detail-content-section" aria-label="Agent philosophy details">
       <div class="section-shell detail-stack">
-        <section class="detail-block">
-          <h2>What I Mean by Agent</h2>
-          <p>An agent is anything that can perceive the current state of its environment, process that perception, and act to change a system.</p>
-          <p>The important part is the loop. The agent does not only observe, and it does not only act. It connects perception, internal processing, and action.</p>
+        <section class="detail-block philosophy-intro">
+          <p class="philosophy-thesis">Agency is a loop, not a label.</p>
+          <h2>AI agents are not the only agents.</h2>
+          <p>When people say "agent" today, they often mean an LLM-powered assistant, chatbot, or software automation. I use the word more broadly. An agent does not have to be a chatbot, and it does not have to be human-like.</p>
+          <p>An agent only needs to close a loop between perception, internal processing, action, and environmental change. By that definition, many engineered and natural systems can be reimagined as agents.</p>
         </section>
 
         <section class="detail-block">
-          <h2>Why Agents Exist at Many Levels</h2>
-          <p>A control system, robot, software system, human, or organization can all be viewed as an agent when it senses conditions, processes information, and acts on the world.</p>
-          <p>The intelligence level changes, but the loop remains useful: perceive, process, act.</p>
+          <h2>My Definition</h2>
+          <p>An agent is a system that senses or receives information about a current state, processes that information through an internal core, and acts to produce a changed state.</p>
+          <div class="philosophy-definition-grid" aria-label="Agent definition parts">
+            <article class="definition-card">
+              <h3>Perception</h3>
+              <p>The system receives signals, measurements, observations, or context from the world.</p>
+            </article>
+            <article class="definition-card">
+              <h3>Agent Core</h3>
+              <p>The system compares, reasons, plans, predicts, retrieves, controls, or decides what should happen next.</p>
+            </article>
+            <article class="definition-card">
+              <h3>Action</h3>
+              <p>The system produces an output through code, force, motion, communication, or structured behavior, bounded by what the action channel can safely do.</p>
+            </article>
+            <article class="definition-card">
+              <h3>State Change</h3>
+              <p>The system leaves the environment, task, process, or user in a different condition than before.</p>
+            </article>
+          </div>
         </section>
 
         <section class="detail-block">
-          <h2>Current System State → Changed System State</h2>
+          <h2>The Simplest Agent: A Thermostat</h2>
+          <p>A thermostat is one of the simplest examples of this loop. It does not reason like a human or plan like an AI system, but it still senses, compares, acts, and changes its environment.</p>
+          <div class="agent-map" aria-label="Thermostat agent loop">
+            <article class="agent-map-item">
+              <h3>Current System State</h3>
+              <p>The room is colder or warmer than the desired temperature.</p>
+            </article>
+            <article class="agent-map-item">
+              <h3>Perception</h3>
+              <p>A temperature sensor reads the current room temperature.</p>
+            </article>
+            <article class="agent-map-item">
+              <h3>Agent Core</h3>
+              <p>The thermostat compares the measured temperature against the target setpoint.</p>
+            </article>
+            <article class="agent-map-item">
+              <h3>Action</h3>
+              <p>It turns heating or cooling on or off.</p>
+            </article>
+            <article class="agent-map-item">
+              <h3>Changed System State</h3>
+              <p>The room temperature moves toward the target.</p>
+            </article>
+          </div>
+          <p>This is not intelligence in the human sense. It is agency at a basic control level: perception, internal comparison, action, and then perceiving the changed room again.</p>
+        </section>
+
+        <section class="detail-block" id="agent-loop">
+          <h2>Current System State to Changed System State</h2>
           <p>The framework describes how an agent changes a system from one state to another.</p>
-          <div class="detail-flow" aria-label="Agent loop">
+          <div class="detail-flow philosophy-flow" aria-label="Agent loop">
             <span>Current System State</span>
             <span>Perception</span>
             <span>Agent Core</span>
             <span>Action</span>
             <span>Changed System State</span>
           </div>
+          <p>From a thermostat to an AI agent, the loop stays recognizable. Feedback is not a separate magic layer; the changed system state becomes the next current system state when the agent perceives the environment again.</p>
+          <p>What changes between agents is the depth of perception, the complexity of the Agent Core, and the range of possible actions.</p>
         </section>
 
         <section class="detail-block">
-          <h2>What the Agent Core Does</h2>
-          <p>The Agent Core is the decision-making center of the agent. It receives perception, forms an internal representation of the current system state, and selects or produces the next action.</p>
-          <p>In engineering terms, the Agent Core can be a controller, policy, planner, retrieval pipeline, reasoning process, or decision structure.</p>
+          <h2>What Changes Between Agents</h2>
+          <p>Agents differ by degree, not just by category. A thermostat and a human are not equally intelligent, but both can be studied through the same loop.</p>
+          <div class="detail-panel-grid philosophy-dimensions">
+            <article class="detail-panel">
+              <h3>Perception Depth</h3>
+              <p>How much of the environment the system can sense, read, or infer.</p>
+            </article>
+            <article class="detail-panel">
+              <h3>Memory and Context</h3>
+              <p>How much history, state, or situational context the system can maintain.</p>
+            </article>
+            <article class="detail-panel">
+              <h3>Decision Complexity</h3>
+              <p>Whether the core is a comparison, controller, policy, planner, reasoning model, or organization process.</p>
+            </article>
+            <article class="detail-panel">
+              <h3>Core Constraints</h3>
+              <p>The goals, rules, safety policies, and operating limits that shape decisions inside the Agent Core.</p>
+            </article>
+            <article class="detail-panel">
+              <h3>Action Limits</h3>
+              <p>The physical constraints, actuator limits, interfaces, and safety mechanisms built into how action is executed.</p>
+            </article>
+            <article class="detail-panel">
+              <h3>Re-Perception</h3>
+              <p>After action changes the system, the agent perceives the environment again and continues the loop.</p>
+            </article>
+          </div>
         </section>
 
         <section class="detail-block">
-          <h2>Examples</h2>
-          <div class="detail-panel-grid">
+          <h2>Spectrum of Agents</h2>
+          <p>The point is not that every agent is equally intelligent. The point is that different systems can share the same structure at different levels of complexity.</p>
+          <div class="detail-panel-grid philosophy-spectrum">
+            <article class="detail-panel">
+              <h3>Thermostat</h3>
+              <p>A basic control loop compares temperature against a setpoint and switches heating or cooling.</p>
+            </article>
             <article class="detail-panel">
               <h3>Gimbal</h3>
               <p>A control algorithm converts IMU and encoder feedback into motor commands.</p>
             </article>
             <article class="detail-panel">
-              <h3>RL Car</h3>
+              <h3>Robot</h3>
               <p>A learned policy selects steering and motion actions while respecting safety constraints.</p>
             </article>
             <article class="detail-panel">
-              <h3>Library Agent</h3>
-              <p>A retrieval and organization system turns scattered documents into searchable structure.</p>
+              <h3>AI Agent</h3>
+              <p>An LLM, tools, memory, and retrieval pipeline convert user intent into software or information actions.</p>
             </article>
             <article class="detail-panel">
               <h3>Human</h3>
@@ -107,9 +185,15 @@
         </section>
 
         <section class="detail-block">
+          <h2>What the Agent Core Can Be</h2>
+          <p>The Agent Core is the decision-making center of the agent. It receives perception, forms an internal representation of the current system state, applies goals and constraints, and selects or produces the next action.</p>
+          <p>In engineering terms, the Agent Core can be a setpoint comparison, controller, policy, planner, retrieval pipeline, reasoning process, or organizational decision structure. The constraints inside it decide what actions are valid before the action is executed.</p>
+        </section>
+
+        <section class="detail-block">
           <h2>Why This Matters for Robotics, AI, and Systems Engineering</h2>
-          <p>This framing makes engineering projects easier to compare. A robot, an embedded controller, a software analytics system, and a document agent can all be explained by what they perceive, how they process it, what action they take, and what system state changes.</p>
-          <p>That is the lens I use across my portfolio: build systems that connect perception, decision-making, action, and measurable outcomes.</p>
+          <p>This framing makes engineering projects easier to compare. A robot, an embedded controller, an AI tool, a software analytics system, and a human-machine workflow can all be explained by what they perceive, how they process it, what action they take, and what system state changes.</p>
+          <p>This is the lens I use across my portfolio: build systems that observe the world, make structured decisions, act within constraints, and create measurable outcomes.</p>
         </section>
       </div>
     </section>
