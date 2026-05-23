@@ -29,14 +29,14 @@ export const siteContent = {
 
   // HERO SECTION: first screen visitors see.
   hero: {
-    kicker: "Yeshwanth Reddy Gurredy / Robotics & Embedded Controls",
-    title: "Agents at Every Level of Intelligence",
+    kicker: "Yeshwanth Reddy Gurredy / Robotics, Embedded Controls & Agent Systems",
+    title: "Agency at Every Level of Intelligence",
     subtitle: "Perceive. Process. Act. Transform.",
     intro:
-      "An agent perceives the current state of a system, processes it inside an Agent Core, and acts to create a changed system state.",
+      "An agent perceives its environment, processes that information through an Agent Core, and acts through a controlled system to create a changed state.",
     highlights: [
-      "UAV gimbal controls",
-      "Human-exoskeleton research",
+      "UAV gimbal",
+      "Human-exoskeleton",
       "Safe Robot Navigation",
     ],
     actions: [
@@ -48,19 +48,17 @@ export const siteContent = {
   // CORE PHILOSOPHY SECTION.
   philosophy: {
     kicker: "CORE PHILOSOPHY",
-    title: "Agency is a loop: perceive, process, act.",
+    title: "Agency is a continuous loop: perceive, process, act.",
     paragraphs: [
-      "An agent is anything that can perceive the current state of its environment, process that perception, and act to change a system.",
-      "Agents exist at many levels of intelligence. A control system, robot, software system, human, or organization can all be viewed as an agent when it senses conditions, processes information, and acts on the world.",
-      "The difference between agents is not whether they are agents or not. The difference is how deeply they perceive, how complex their internal processing is, and how much they can affect through action.",
+      "These days, agents are often associated with AI. I define an agent more broadly: something that perceives, processes, and acts. The important part is that this is a continuous loop: an agent perceives its environment, processes that information through an Agent Core, and acts through a controlled system to create a changed state.",
+      "A thermostat reads room temperature and controls heating or cooling. A gimbal senses disturbance and commands motors to counter it. At the current high end, an AI agent can interpret a user goal, retrieve context, reason through an LLM and tool stack, and act through software tools. The intelligence level is different, but the loop is the same.",
+      "The difference between agents is how deeply they perceive, how much context they carry, how complex their Agent Core is, and how much they can affect through action.",
       "In this framework, every agent operates through the same loop:",
-      "The Agent Core is the decision-making center of the agent. It receives perception, forms an internal representation of the current system state, and selects or produces the next action.",
-      "In different agents, the Agent Core takes different forms: a control algorithm in a gimbal, a learned policy in a navigation agent, a retrieval system in a library agent, the mind in a human, or the decision structure of an organization.",
     ],
     equation: {
       label: "Core framework",
-      parts: ["Current System State", "\\u2192", "Perception", "\\u2192", "Agent Core", "\\u2192", "Action", "\\u2192"],
-      result: "Changed System State",
+      parts: ["Environment State", "\\u2192", "Perception", "\\u2192", "Agent Core", "\\u2192", "Controlled Action", "\\u2192"],
+      result: "Changed State",
     },
     deeperLink: {
       label: "Read the deeper philosophy",
@@ -78,7 +76,6 @@ export const siteContent = {
       "Robot",
       "AI Agent",
       "Human",
-      "Organization",
     ],
   },
 
